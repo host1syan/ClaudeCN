@@ -1,5 +1,5 @@
 name: Build Windows from Tarball
- 
+
 # 用途：代码不在本仓库时，用公开 tar.gz 链接在 windows-latest 上打 NSIS 安装包。
 # 用法：Actions → Build Windows from Tarball → Run workflow → 填 source_url
 #
@@ -7,12 +7,12 @@ name: Build Windows from Tarball
 # - 根目录可以是 newcc/ 或已是仓库根（含 desktop/、package.json）
 # - 不要带 node_modules（CI 自己 bun install）
 # - 建议用本机打的 newcc0724.tar.gz 一类正式包
- 
+
 on:
   workflow_dispatch:
     inputs:
       source_url:
-        description: 'http://198.200.39.43:3458/php/newcc0724.tar.gz'
+        description: '公开可下载的源码 tar.gz URL（http/https）'
         required: true
         type: string
       arch:
@@ -28,19 +28,19 @@ on:
         required: false
         default: false
         type: boolean
- 
+
 permissions:
   contents: read
- 
+
 concurrency:
   group: build-windows-from-tarball-${{ github.ref }}
   cancel-in-progress: true
- 
+
 jobs:
   build-windows:
     runs-on: windows-latest
     name: Build Windows (${{ inputs.arch }})
- 
+
     steps:
       - name: Checkout workflow shell (only needs .github)
         uses: actions/checkout@v4
@@ -48,7 +48,7 @@ jobs:
           sparse-checkout: |
             .github
           sparse-checkout-cone-mode: false
- 
+
       - name: Download and extract source tarball
         shell: bash
         env:
@@ -63,25 +63,34 @@ jobs:
             echo "::error::source_url must start with http:// or https://"
             exit 1
           fi
- 
-          WORK="${RUNNER_TEMP}/cc-haha-src"
+
+          # Windows 上 D:\path 会被 GNU tar 当成 host:file（D: = 主机名）。
+          # 全部落在 GITHUB_WORKSPACE 相对路径，避开盘符冒号。
+          WORK="_src_extract"
+          ARCHIVE="_source.tgz"
+          rm -rf "$WORK" "$ARCHIVE"
           mkdir -p "$WORK"
-          ARCHIVE="${RUNNER_TEMP}/source.tgz"
- 
+
           echo "Downloading: ${SOURCE_URL}"
           curl -fL --retry 3 --retry-delay 2 -o "$ARCHIVE" "$SOURCE_URL"
           ls -lh "$ARCHIVE"
- 
+          # 粗校验：文件太小多半不是完整 tar
+          SIZE=$(wc -c < "$ARCHIVE" | tr -d ' ')
+          if [[ "$SIZE" -lt 1000000 ]]; then
+            echo "::error::downloaded archive too small (${SIZE} bytes)"
+            exit 1
+          fi
+
           echo "Extracting..."
-          tar -xzf "$ARCHIVE" -C "$WORK"
- 
+          # --force-local：即使路径里出现冒号也当本地文件
+          tar --force-local -xzf "$ARCHIVE" -C "$WORK"
+
           # 兼容根是 newcc/ 或直接是仓库根
           if [[ -f "$WORK/package.json" && -d "$WORK/desktop" ]]; then
             ROOT="$WORK"
           elif [[ -f "$WORK/newcc/package.json" && -d "$WORK/newcc/desktop" ]]; then
             ROOT="$WORK/newcc"
           else
-            # 再找一层：任意含 desktop/package.json 的目录
             CANDIDATE=$(find "$WORK" -maxdepth 3 -type f -path '*/desktop/package.json' | head -n 1 || true)
             if [[ -n "${CANDIDATE}" ]]; then
               ROOT=$(cd "$(dirname "$CANDIDATE")/.." && pwd)
@@ -91,20 +100,25 @@ jobs:
               exit 1
             fi
           fi
- 
+
           echo "Source root: $ROOT"
-          # 把源码铺到 GITHUB_WORKSPACE，后续 step 路径与官方 workflow 一致
-          # 保留 .github（本仓库 workflow）；覆盖其余源码
-          rsync -a --delete \
-            --exclude '.github' \
-            --exclude '.git' \
-            "$ROOT"/ "$GITHUB_WORKSPACE"/
- 
+          # Windows runner 通常无 rsync；用 cp 铺到工作区，保留 .github
+          shopt -s dotglob nullglob
+          for item in "$ROOT"/*; do
+            base=$(basename "$item")
+            if [[ "$base" == ".github" || "$base" == ".git" ]]; then
+              continue
+            fi
+            rm -rf "${GITHUB_WORKSPACE:?}/$base"
+            cp -a "$item" "$GITHUB_WORKSPACE/"
+          done
+
           test -f "$GITHUB_WORKSPACE/package.json"
           test -d "$GITHUB_WORKSPACE/desktop"
           echo "Workspace ready:"
           ls -la "$GITHUB_WORKSPACE" | head -n 40
- 
+          rm -rf "$WORK" "$ARCHIVE"
+
       - name: Resolve target matrix
         id: target
         shell: bash
@@ -118,7 +132,7 @@ jobs:
             echo "builder_args=--win nsis --x64" >> "$GITHUB_OUTPUT"
             echo "artifact_name=windows-x64" >> "$GITHUB_OUTPUT"
           fi
- 
+
       - name: Read version
         id: version
         shell: bash
@@ -126,73 +140,73 @@ jobs:
           VERSION=$(node -p "require('./desktop/package.json').version")
           echo "version=$VERSION" >> "$GITHUB_OUTPUT"
           echo "version=$VERSION"
- 
+
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
         with:
           bun-version-file: package.json
- 
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 22
- 
+
       - name: Install root dependencies
         run: bun install
- 
+
       - name: Install desktop dependencies
         working-directory: desktop
         run: bun install
- 
+
       - name: Install adapter dependencies
         working-directory: adapters
         run: bun install
- 
+
       - name: Verify Windows legacy data recovery
         working-directory: desktop
         run: bun run test:windows-storage-recovery
- 
+
       - name: Prepare bundled ripgrep
         working-directory: desktop
         env:
           SIDECAR_TARGET_TRIPLE: ${{ steps.target.outputs.target_triple }}
         run: bun run prepare:ripgrep
- 
+
       - name: Build sidecars
         working-directory: desktop
         env:
           BUN_INSTALL_CACHE_DIR: ${{ runner.temp }}/bun-install-cache
           SIDECAR_TARGET_TRIPLE: ${{ steps.target.outputs.target_triple }}
         run: bun run build:sidecars
- 
+
       - name: Verify compiled Windows sidecar startup
         if: inputs.arch == 'x64'
         working-directory: desktop
         env:
           CC_HAHA_COMPILED_SIDECAR_SMOKE_STARTS: '20'
         run: bun run test:compiled-sidecar-smoke
- 
+
       - name: Build renderer and Electron bundles
         working-directory: desktop
         run: |
           bun run build
           bun run build:electron
- 
+
       - name: Build Electron Windows installer
         working-directory: desktop
         env:
           CSC_IDENTITY_AUTO_DISCOVERY: 'false'
         run: node ./node_modules/electron-builder/out/cli/cli.js ${{ steps.target.outputs.builder_args }} --publish never
- 
+
       - name: Verify Windows installer execution
         if: inputs.arch == 'x64' && inputs.skip_installer_smoke != true
         timeout-minutes: 10
         working-directory: desktop
         run: powershell -NoLogo -NoProfile -ExecutionPolicy Bypass -File ./scripts/windows-installer-smoke.ps1 -ArtifactsDir ./build-artifacts/electron -Arch x64
- 
+
       - name: Verify packaged app structure
         run: bun run test:package-smoke --platform windows --arch ${{ inputs.arch }} --package-kind release --artifacts-dir desktop/build-artifacts/electron
- 
+
       - name: Collect artifacts
         id: collect
         shell: bash
@@ -206,7 +220,7 @@ jobs:
             done
           echo "staging_dir=$STAGING" >> "$GITHUB_OUTPUT"
           ls -lh "$STAGING/" 2>/dev/null || true
- 
+
       - name: Upload Windows artifacts
         uses: actions/upload-artifact@v4
         with:
@@ -214,4 +228,3 @@ jobs:
           path: ${{ steps.collect.outputs.staging_dir }}
           retention-days: 14
           if-no-files-found: error
- 
