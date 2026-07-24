@@ -1,0 +1,207 @@
+name: Build Docker from Tarball
+
+# 从公开 tar.gz 多架构构建 Docker 镜像并推送到 GHCR（或只构建不推送）。
+# 架构：linux/amd64 + linux/arm64（一个 manifest，docker pull 自动选）
+#
+# 用法：
+#   Actions → Build Docker from Tarball → Run workflow
+#   - source_url: 公开 tar.gz 直链（如 newcc0724.tar.gz）
+#   - image_name: 镜像名（默认用仓库名）
+#   - tags: 逗号分隔标签，默认 latest + 日期
+#   - push: true 才推送；false 只验证能编过
+#
+# 推送目标默认：ghcr.io/<owner>/<image_name>
+# 需要权限：packages: write（本 workflow 已声明）
+# 私有包：仓库 Settings → Actions → General → Workflow permissions 勾选 read/write
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_url:
+        description: '公开可下载的源码 tar.gz URL'
+        required: true
+        type: string
+      image_name:
+        description: '镜像名（不含 registry/owner）'
+        required: true
+        default: 'claude-cn'
+        type: string
+      tags:
+        description: '标签，逗号分隔。空则用 latest + UTC 日期'
+        required: false
+        default: 'latest'
+        type: string
+      platforms:
+        description: '目标平台'
+        required: true
+        default: 'linux/amd64,linux/arm64'
+        type: choice
+        options:
+          - 'linux/amd64,linux/arm64'
+          - 'linux/amd64'
+          - 'linux/arm64'
+      push:
+        description: '推送到 GHCR'
+        required: true
+        default: true
+        type: boolean
+      dockerfile:
+        description: 'Dockerfile 相对路径'
+        required: false
+        default: 'Dockerfile'
+        type: string
+
+permissions:
+  contents: read
+  packages: write
+
+concurrency:
+  group: build-docker-from-tarball-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  REGISTRY: ghcr.io
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Multi-arch Docker build
+
+    steps:
+      - name: Checkout workflow shell
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            .github
+          sparse-checkout-cone-mode: false
+
+      - name: Download and extract source tarball
+        shell: bash
+        env:
+          SOURCE_URL: ${{ inputs.source_url }}
+        run: |
+          set -euo pipefail
+          if [[ ! "${SOURCE_URL}" =~ ^https?:// ]]; then
+            echo "::error::source_url must be http(s)"
+            exit 1
+          fi
+
+          WORK="${RUNNER_TEMP}/cc-src"
+          mkdir -p "$WORK"
+          ARCHIVE="${RUNNER_TEMP}/source.tgz"
+
+          echo "Downloading ${SOURCE_URL}"
+          curl -fL --retry 3 --retry-delay 2 -o "$ARCHIVE" "$SOURCE_URL"
+          ls -lh "$ARCHIVE"
+          tar -xzf "$ARCHIVE" -C "$WORK"
+
+          if [[ -f "$WORK/Dockerfile" && -f "$WORK/package.json" ]]; then
+            ROOT="$WORK"
+          elif [[ -f "$WORK/newcc/Dockerfile" && -f "$WORK/newcc/package.json" ]]; then
+            ROOT="$WORK/newcc"
+          else
+            CANDIDATE=$(find "$WORK" -maxdepth 3 -type f -name Dockerfile | head -n 1 || true)
+            if [[ -z "${CANDIDATE}" ]]; then
+              echo "::error::tarball 里找不到 Dockerfile"
+              find "$WORK" -maxdepth 3 -type d | head -n 40
+              exit 1
+            fi
+            ROOT=$(cd "$(dirname "$CANDIDATE")" && pwd)
+          fi
+
+          echo "Source root: $ROOT"
+          rsync -a --delete \
+            --exclude '.github' \
+            --exclude '.git' \
+            "$ROOT"/ "$GITHUB_WORKSPACE"/
+
+          test -f "$GITHUB_WORKSPACE/${{ inputs.dockerfile }}"
+          test -f "$GITHUB_WORKSPACE/package.json"
+          echo "Workspace ready"
+          ls -la "$GITHUB_WORKSPACE" | head -n 30
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to GHCR
+        if: inputs.push == true
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Compute image tags
+        id: meta
+        shell: bash
+        run: |
+          set -euo pipefail
+          OWNER_LC=$(echo '${{ github.repository_owner }}' | tr '[:upper:]' '[:lower:]')
+          IMAGE_NAME=$(echo '${{ inputs.image_name }}' | tr '[:upper:]' '[:lower:]' | tr -c 'a-z0-9._-' '-')
+          IMAGE="${{ env.REGISTRY }}/${OWNER_LC}/${IMAGE_NAME}"
+
+          RAW_TAGS='${{ inputs.tags }}'
+          if [[ -z "${RAW_TAGS// }" ]]; then
+            RAW_TAGS="latest,$(date -u +%Y%m%d)"
+          fi
+
+          TAG_ARGS=()
+          IFS=',' read -ra PARTS <<< "$RAW_TAGS"
+          for t in "${PARTS[@]}"; do
+            t=$(echo "$t" | xargs)
+            [[ -z "$t" ]] && continue
+            TAG_ARGS+=("${IMAGE}:${t}")
+          done
+
+          {
+            echo "image=${IMAGE}"
+            echo "tags<<EOF"
+            printf '%s\n' "${TAG_ARGS[@]}"
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+
+          echo "Image: ${IMAGE}"
+          printf 'Tags:\n'
+          printf '  %s\n' "${TAG_ARGS[@]}"
+
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: ${{ inputs.dockerfile }}
+          platforms: ${{ inputs.platforms }}
+          push: ${{ inputs.push }}
+          tags: ${{ steps.meta.outputs.tags }}
+          provenance: false
+          # 跨架构构建较慢；GHA cache 可加速二次构建
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Summary
+        if: always()
+        shell: bash
+        run: |
+          {
+            echo "## Docker build"
+            echo ""
+            echo "- source: \`${{ inputs.source_url }}\`"
+            echo "- platforms: \`${{ inputs.platforms }}\`"
+            echo "- push: \`${{ inputs.push }}\`"
+            echo "- image: \`${{ steps.meta.outputs.image }}\`"
+            echo ""
+            echo "### Tags"
+            echo '```'
+            echo "${{ steps.meta.outputs.tags }}"
+            echo '```'
+            if [ "${{ inputs.push }}" = "true" ]; then
+              echo ""
+              echo "### Pull"
+              echo '```bash'
+              FIRST_TAG=$(echo "${{ steps.meta.outputs.tags }}" | head -n 1)
+              echo "docker pull ${FIRST_TAG}"
+              echo '```'
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
