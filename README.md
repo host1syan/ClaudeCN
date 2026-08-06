@@ -50,21 +50,7 @@ Claude CN 与 Kilo Free 都依赖上游服务。免费模型目录、额度、�
 2. 首次启动后，在桌面端设置中配置模型渠道、API Key 和默认模型。
 3. macOS 临时包可能需要手动放行；Windows 未签名安装包可能触发 SmartScreen。详见[桌面端安装指南](docs/desktop/04-installation.md)。
 
-## 从源码启动
 
-```bash
-bun install
-cp .env.example .env
-
-# 启动终端 CLI
-./bin/claude-cn
-
-# 启动本地服务端，默认 3456 端口
-SERVER_PORT=3456 bun run src/server/index.ts
-
-# 启动桌面端
-cd desktop && bun install && bun run dev
-```
 
 配置方式见[环境变量](docs/guide/env-vars.md)、[全局使用](docs/guide/global-usage.md)和[快速开始](docs/guide/quick-start.md)。
 
