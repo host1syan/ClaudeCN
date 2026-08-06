@@ -1,0 +1,30 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="v2-9-a" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#8B5CF6"/>
+    </linearGradient>
+    <linearGradient id="v2-9-b" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#EC4899"/>
+      <stop offset="100%" stop-color="#F97316"/>
+    </linearGradient>
+    <filter id="v2-9-blur" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="16"/>
+    </filter>
+  </defs>
+
+  <rect width="1024" height="1024" rx="224" fill="#FFFFFF"/>
+
+  <!-- 上升趋势折线（蓝紫） -->
+  <path d="M220 640 L400 520 L480 560 L620 380 L800 300" stroke="url(#v2-9-a)" stroke-width="36" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+  <!-- 前景短折线（粉橙，错层） -->
+  <path d="M240 720 L380 640 L460 668 L560 540" stroke="url(#v2-9-b)" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.85"/>
+
+  <!-- 端点光点 -->
+  <circle cx="800" cy="300" r="26" fill="url(#v2-9-a)"/>
+  <circle cx="800" cy="300" r="44" fill="none" stroke="#8B5CF6" stroke-width="4" opacity="0.4" filter="url(#v2-9-blur)"/>
+
+  <!-- 底部短线 -->
+  <path d="M240 800 H784" stroke="#E5E7EB" stroke-width="8" stroke-linecap="round"/>
+</svg>

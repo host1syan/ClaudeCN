@@ -1,0 +1,39 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="v2-2-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#134E4A"/>
+    </linearGradient>
+    <linearGradient id="v2-2-a" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2DD4BF"/>
+      <stop offset="100%" stop-color="#0D9488"/>
+    </linearGradient>
+    <linearGradient id="v2-2-b" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#5EEAD4"/>
+      <stop offset="100%" stop-color="#14B8A6"/>
+    </linearGradient>
+    <linearGradient id="v2-2-c" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0F766E"/>
+      <stop offset="100%" stop-color="#115E59"/>
+    </linearGradient>
+    <radialGradient id="v2-2-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2DD4BF" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#2DD4BF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1024" height="1024" rx="224" fill="url(#v2-2-bg)"/>
+  <circle cx="512" cy="512" r="360" fill="url(#v2-2-glow)"/>
+
+  <!-- 折纸立方体：顶面 / 左面 / 右面 -->
+  <path d="M512 216 L746 356 L512 496 L278 356 Z" fill="url(#v2-2-a)"/>
+  <path d="M278 356 L512 496 L512 780 L278 640 Z" fill="url(#v2-2-c)"/>
+  <path d="M746 356 L512 496 L512 780 L746 640 Z" fill="url(#v2-2-b)"/>
+
+  <!-- 棱线高光 -->
+  <path d="M512 216 V496 M278 356 L512 496 L746 356 M512 496 V780 M278 640 L512 780 L746 640"
+        stroke="#99F6E4" stroke-width="6" stroke-linecap="round" opacity="0.7" fill="none"/>
+
+  <!-- 顶面代码光标 -->
+  <path d="M448 380 L488 372 L576 352 L536 360 Z" fill="#CCFBF1"/>
+</svg>

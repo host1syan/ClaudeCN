@@ -1,0 +1,10 @@
+<svg width="2200" height="640" viewBox="0 0 2200 640" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 左侧图标 -->
+  <image x="104" y="80" width="480" height="480" href="app-icon.svg" preserveAspectRatio="xMidYMid meet"/>
+  <!-- 品牌文字：Claude Code Cn，鎏金深棕 -->
+  <text x="680" y="310" fill="#B4832A" font-family="Manrope, Inter, Helvetica Neue, Arial, sans-serif" font-size="168" font-weight="800">Claude Code</text>
+  <text x="680" y="470" fill="#C9962F" font-family="Manrope, Inter, Helvetica Neue, Arial, sans-serif" font-size="132" font-weight="800">Cn</text>
+  <!-- 文字下方鎏金横线 -->
+  <path d="M690 540H1580" stroke="#E8B84B" stroke-width="16" stroke-linecap="round"/>
+  <path d="M1616 540H1700" stroke="#FFE7A8" stroke-width="16" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,20 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>claude-cn logo</title>
+  <desc>Two interlocking Cs, blue and gold, with contrasting code brackets at their centers.</desc>
+  <defs>
+    <linearGradient id="gold" x1="150" y1="170" x2="560" y2="850" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFE7A8"/>
+      <stop offset="0.45" stop-color="#E7B94F"/>
+      <stop offset="1" stop-color="#A9781E"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="460" y1="170" x2="880" y2="850" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#56B7FF"/>
+      <stop offset="0.5" stop-color="#1677E8"/>
+      <stop offset="1" stop-color="#0B3F9E"/>
+    </linearGradient>
+  </defs>
+  <path d="M390 287A225 225 0 1 0 390 737" stroke="url(#blue)" stroke-width="92" stroke-linecap="round"/>
+  <path d="M634 287A225 225 0 1 1 634 737" stroke="url(#gold)" stroke-width="92" stroke-linecap="round"/>
+  <path d="M385 452L337 512L385 572" stroke="url(#gold)" stroke-width="34" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M639 452L687 512L639 572" stroke="url(#blue)" stroke-width="34" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

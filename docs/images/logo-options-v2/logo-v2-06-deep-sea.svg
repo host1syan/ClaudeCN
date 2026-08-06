@@ -1,0 +1,39 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="v2-6-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0F3A52"/>
+      <stop offset="100%" stop-color="#0B2545"/>
+    </linearGradient>
+    <radialGradient id="v2-6-core" cx="50%" cy="42%" r="50%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#0284C7"/>
+    </radialGradient>
+    <radialGradient id="v2-6-halo" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#38BDF8" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="v2-6-blur" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="40"/>
+    </filter>
+  </defs>
+
+  <rect width="1024" height="1024" rx="224" fill="url(#v2-6-bg)"/>
+  <circle cx="512" cy="460" r="280" fill="url(#v2-6-halo)" filter="url(#v2-6-blur)"/>
+
+  <!-- 气泡主体 -->
+  <circle cx="512" cy="460" r="260" fill="url(#v2-6-core)"/>
+  <circle cx="512" cy="460" r="260" stroke="#7DD3FC" stroke-width="3" opacity="0.6" fill="none"/>
+
+  <!-- 气泡高光 -->
+  <path d="M340 330 C380 270 440 244 512 240" stroke="#E0F2FE" stroke-width="18" stroke-linecap="round" fill="none" opacity="0.7"/>
+
+  <!-- 代码括号 -->
+  <path d="M420 390 L352 460 L420 530" stroke="#E0F2FE" stroke-width="36" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M604 390 L672 460 L604 530" stroke="#E0F2FE" stroke-width="36" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+  <!-- 飘浮小气泡 -->
+  <circle cx="300" cy="300" r="14" fill="#7DD3FC" opacity="0.4"/>
+  <circle cx="716" cy="272" r="10" fill="#7DD3FC" opacity="0.3"/>
+  <circle cx="252" cy="620" r="18" fill="#7DD3FC" opacity="0.25"/>
+  <circle cx="748" cy="640" r="12" fill="#7DD3FC" opacity="0.35"/>
+</svg>

@@ -1,0 +1,44 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="v2-3-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0C1222"/>
+      <stop offset="100%" stop-color="#1A2A4A"/>
+    </linearGradient>
+    <linearGradient id="v2-3-gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F5D67B"/>
+      <stop offset="100%" stop-color="#D4A93C"/>
+    </linearGradient>
+    <linearGradient id="v2-3-blue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#60A5FA"/>
+      <stop offset="100%" stop-color="#2563EB"/>
+    </linearGradient>
+    <filter id="v2-3-blur" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="30"/>
+    </filter>
+  </defs>
+
+  <rect width="1024" height="1024" rx="224" fill="url(#v2-3-bg)"/>
+
+  <!-- 金色光晕 -->
+  <circle cx="512" cy="512" r="240" fill="url(#v2-3-gold)" opacity="0.14" filter="url(#v2-3-blur)"/>
+
+  <!-- 分子轨道：六节点连接 -->
+  <path d="M512 208 L762 360 L762 664 L512 816 L262 664 L262 360 Z"
+        fill="none" stroke="url(#v2-3-blue)" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" opacity="0.55"/>
+  <!-- 内层十字 -->
+  <path d="M512 208 L512 816 M262 360 L762 664 M762 360 L262 664"
+        stroke="#93C5FD" stroke-width="10" opacity="0.35" stroke-linecap="round"/>
+
+  <!-- 中心金色节点 -->
+  <circle cx="512" cy="512" r="64" fill="url(#v2-3-gold)"/>
+  <!-- 六个蓝色节点 -->
+  <circle cx="512" cy="208" r="30" fill="url(#v2-3-blue)"/>
+  <circle cx="762" cy="360" r="30" fill="url(#v2-3-blue)"/>
+  <circle cx="762" cy="664" r="30" fill="url(#v2-3-blue)"/>
+  <circle cx="512" cy="816" r="30" fill="url(#v2-3-blue)"/>
+  <circle cx="262" cy="664" r="30" fill="url(#v2-3-blue)"/>
+  <circle cx="262" cy="360" r="30" fill="url(#v2-3-blue)"/>
+
+  <!-- 中心代码光标 -->
+  <path d="M490 490 V534 M512 490 V534 M534 490 V534" stroke="#0C1222" stroke-width="16" stroke-linecap="round"/>
+</svg>

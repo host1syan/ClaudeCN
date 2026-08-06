@@ -1,0 +1,40 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="v2-1-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1E1B4B"/>
+      <stop offset="100%" stop-color="#312E81"/>
+    </linearGradient>
+    <linearGradient id="v2-1-neon" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#818CF8"/>
+      <stop offset="100%" stop-color="#C4B5FD"/>
+    </linearGradient>
+    <radialGradient id="v2-1-glow" cx="50%" cy="42%" r="60%">
+      <stop offset="0%" stop-color="#6366F1" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#6366F1" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="v2-1-blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="36"/>
+    </filter>
+  </defs>
+
+  <rect width="1024" height="1024" rx="224" fill="url(#v2-1-bg)"/>
+  <circle cx="512" cy="480" r="330" fill="url(#v2-1-glow)"/>
+
+  <!-- 侧脑轮廓 -->
+  <path d="M512 224 C420 224 344 300 344 392 C344 416 350 438 360 458 C328 486 310 526 310 570 C310 622 342 668 390 684 C390 720 430 748 470 748 L554 748 C594 748 634 720 634 684 C682 668 714 622 714 570 C714 526 696 486 664 458 C674 438 680 416 680 392 C680 300 604 224 512 224 Z"
+        fill="url(#v2-1-neon)" opacity="0.16"/>
+  <path d="M512 224 C420 224 344 300 344 392 C344 416 350 438 360 458 C328 486 310 526 310 570 C310 622 342 668 390 684 C390 720 430 748 470 748 L554 748 C594 748 634 720 634 684 C682 668 714 622 714 570 C714 526 696 486 664 458 C674 438 680 416 680 392 C680 300 604 224 512 224 Z"
+        fill="none" stroke="url(#v2-1-neon)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- 脑内电路纹理 -->
+  <path d="M420 420 L460 460 L460 560 L420 600" stroke="#A5B4FC" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.8"/>
+  <path d="M604 420 L564 460 L564 560 L604 600" stroke="#A5B4FC" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.8"/>
+  <circle cx="460" cy="460" r="10" fill="#E0E7FF"/>
+  <circle cx="460" cy="560" r="10" fill="#E0E7FF"/>
+  <circle cx="564" cy="460" r="10" fill="#E0E7FF"/>
+  <circle cx="564" cy="560" r="10" fill="#E0E7FF"/>
+
+  <!-- 中央光点 -->
+  <circle cx="512" cy="512" r="26" fill="#E0E7FF"/>
+  <circle cx="512" cy="512" r="52" fill="none" stroke="#818CF8" stroke-width="4" opacity="0.6"/>
+</svg>

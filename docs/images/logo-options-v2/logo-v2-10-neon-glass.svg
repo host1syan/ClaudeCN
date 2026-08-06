@@ -1,0 +1,49 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="v2-10-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0A0F1E"/>
+      <stop offset="100%" stop-color="#1A1F3A"/>
+    </linearGradient>
+    <linearGradient id="v2-10-glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#22D3EE" stop-opacity="0.35"/>
+      <stop offset="50%" stop-color="#818CF8" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#F472B6" stop-opacity="0.3"/>
+    </linearGradient>
+    <radialGradient id="v2-10-core" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#A5F3FC"/>
+      <stop offset="100%" stop-color="#22D3EE"/>
+    </radialGradient>
+    <filter id="v2-10-blur" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="36"/>
+    </filter>
+    <filter id="v2-10-soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="10"/>
+    </filter>
+  </defs>
+
+  <rect width="1024" height="1024" rx="224" fill="url(#v2-10-bg)"/>
+
+  <!-- 环境霓虹光晕 -->
+  <circle cx="360" cy="320" r="200" fill="#22D3EE" opacity="0.14" filter="url(#v2-10-blur)"/>
+  <circle cx="680" cy="680" r="200" fill="#F472B6" opacity="0.12" filter="url(#v2-10-blur)"/>
+
+  <!-- 玻璃拟态圆角方块 -->
+  <rect x="262" y="262" width="500" height="500" rx="120" fill="url(#v2-10-glass)" stroke="#A5F3FC" stroke-opacity="0.45" stroke-width="3"/>
+  <!-- 玻璃高光 -->
+  <path d="M320 300 H600" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" opacity="0.5"/>
+  <path d="M320 326 H520" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" opacity="0.3"/>
+
+  <!-- 霓虹核心：对话 + 代码 -->
+  <circle cx="512" cy="512" r="110" fill="url(#v2-10-core)" filter="url(#v2-10-soft)"/>
+  <circle cx="512" cy="512" r="110" fill="url(#v2-10-core)"/>
+
+  <!-- 核心内对话点 -->
+  <circle cx="512" cy="512" r="34" fill="#0A0F1E"/>
+  <!-- 三个小点 -->
+  <circle cx="480" cy="512" r="10" fill="#A5F3FC"/>
+  <circle cx="512" cy="512" r="10" fill="#A5F3FC"/>
+  <circle cx="544" cy="512" r="10" fill="#A5F3FC"/>
+
+  <!-- 外圈轨道虚线 -->
+  <circle cx="512" cy="512" r="200" stroke="#22D3EE" stroke-width="3" stroke-dasharray="14 20" opacity="0.5" fill="none"/>
+</svg>

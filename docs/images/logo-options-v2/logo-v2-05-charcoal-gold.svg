@@ -1,0 +1,27 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="v2-5-gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFE7A8"/>
+      <stop offset="50%" stop-color="#E8B84B"/>
+      <stop offset="100%" stop-color="#B8860B"/>
+    </linearGradient>
+    <radialGradient id="v2-5-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#E8B84B" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#E8B84B" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1024" height="1024" rx="224" fill="#17181C"/>
+  <circle cx="512" cy="512" r="300" fill="url(#v2-5-glow)"/>
+
+  <!-- 细金圈 -->
+  <circle cx="512" cy="512" r="360" stroke="url(#v2-5-gold)" stroke-width="3" opacity="0.4" fill="none"/>
+
+  <!-- 代码斜杠 &lt;/&gt; -->
+  <path d="M290 360 L196 512 L290 664" stroke="url(#v2-5-gold)" stroke-width="48" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M734 360 L828 512 L734 664" stroke="url(#v2-5-gold)" stroke-width="48" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M596 360 L428 664" stroke="url(#v2-5-gold)" stroke-width="48" stroke-linecap="round" fill="none"/>
+
+  <!-- 底部横线 -->
+  <path d="M356 764 H668" stroke="url(#v2-5-gold)" stroke-width="10" stroke-linecap="round" opacity="0.6"/>
+</svg>

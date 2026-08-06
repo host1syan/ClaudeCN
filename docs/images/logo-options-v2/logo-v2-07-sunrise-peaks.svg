@@ -1,0 +1,31 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="v2-7-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7C2D12"/>
+      <stop offset="55%" stop-color="#C2410C"/>
+      <stop offset="100%" stop-color="#EA580C"/>
+    </linearGradient>
+    <radialGradient id="v2-7-sun" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFF7ED"/>
+      <stop offset="60%" stop-color="#FFEDD5"/>
+      <stop offset="100%" stop-color="#FDBA74"/>
+    </radialGradient>
+    <linearGradient id="v2-7-peak" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#431407"/>
+      <stop offset="100%" stop-color="#7C2D12"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1024" height="1024" rx="224" fill="url(#v2-7-bg)"/>
+
+  <!-- 升起的太阳 -->
+  <circle cx="512" cy="440" r="168" fill="url(#v2-7-sun)"/>
+
+  <!-- 三层抽象山峰 -->
+  <path d="M96 800 L352 400 L520 620 L672 460 L928 800 Z" fill="url(#v2-7-peak)"/>
+  <path d="M352 400 L520 620 L672 460" stroke="#FDBA74" stroke-width="10" stroke-linejoin="round" opacity="0.5" fill="none"/>
+
+  <!-- 峰间光隙 -->
+  <path d="M520 620 L520 800" stroke="#FFEDD5" stroke-width="8" opacity="0.4"/>
+  <path d="M672 460 L672 800" stroke="#FFEDD5" stroke-width="6" opacity="0.3"/>
+</svg>

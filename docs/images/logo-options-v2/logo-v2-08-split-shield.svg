@@ -1,0 +1,36 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="v2-8-l" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4F46E5"/>
+      <stop offset="100%" stop-color="#312E81"/>
+    </linearGradient>
+    <linearGradient id="v2-8-r" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#B45309"/>
+    </linearGradient>
+    <filter id="v2-8-blur" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="24"/>
+    </filter>
+  </defs>
+
+  <rect width="1024" height="1024" rx="224" fill="#111827"/>
+
+  <!-- 对称盾牌 -->
+  <path d="M512 152 C620 200 744 240 744 352 C744 560 640 712 512 824 C384 712 280 560 280 352 C280 240 404 200 512 152 Z"
+        fill="url(#v2-8-l)"/>
+  <path d="M512 152 C620 200 744 240 744 352 C744 560 640 712 512 824 Z"
+        fill="url(#v2-8-r)"/>
+
+  <!-- 左右高光边 -->
+  <path d="M512 152 C404 200 280 240 280 352 C280 560 384 712 512 824"
+        stroke="#A5B4FC" stroke-width="6" stroke-linecap="round" opacity="0.5" fill="none"/>
+  <path d="M512 152 C620 200 744 240 744 352 C744 560 640 712 512 824"
+        stroke="#FCD34D" stroke-width="6" stroke-linecap="round" opacity="0.5" fill="none"/>
+
+  <!-- 左蓝代码括号 / 右金斜杠 -->
+  <path d="M420 400 L364 460 L420 520" stroke="#E0E7FF" stroke-width="32" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M604 400 L660 460 L604 520" stroke="#FDE68A" stroke-width="32" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+  <!-- 中心光点 -->
+  <circle cx="512" cy="460" r="18" fill="#FFFFFF"/>
+</svg>
