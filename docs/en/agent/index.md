@@ -58,7 +58,7 @@ Deconstructing the architecture behind Claude Code's agent framework from source
 
 ## Illustration Notes
 
-All diagrams use a dark background (#1a1a2e) with Claude Code Cn orange-blue accent (#FF7A00), consistent with Claude Code's official documentation style.
+All diagrams use a dark background (#1a1a2e) with ClaudeCN orange-blue accent (#FF7A00), consistent with Claude Code's official documentation style.
 
 | Image | Description | Document |
 |-------|-------------|----------|
@@ -121,7 +121,7 @@ All diagrams use a dark background (#1a1a2e) with Claude Code Cn orange-blue acc
 
 ## Related Resources
 
-- [Claude Code Cn Home](/)
+- [ClaudeCN Home](/)
 - [Memory System Documentation](/en/memory/01-usage-guide)
 - [Agent Tool Source Code](https://github.com/host1syan/claude-cn/tree/main/src/tools/AgentTool/)
 - [Swarm Infrastructure](https://github.com/host1syan/claude-cn/tree/main/src/utils/swarm/)

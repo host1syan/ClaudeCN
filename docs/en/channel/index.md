@@ -25,7 +25,7 @@ A deep dive into the design and implementation of Claude Code's Channel system f
 
 ## Illustrations
 
-All illustrations use a dark background (#1a1a2e) with Claude Code Cn orange-blue accents (#FF7A00).
+All illustrations use a dark background (#1a1a2e) with ClaudeCN orange-blue accents (#FF7A00).
 
 | Image | Description | Document |
 |-------|-------------|----------|
@@ -77,7 +77,7 @@ All illustrations use a dark background (#1a1a2e) with Claude Code Cn orange-blu
 
 ## Related Resources
 
-- [Claude Code Cn Home](/en/)
+- [ClaudeCN Home](/en/)
 - [Agent Framework Deep Dive](/en/agent/03-agent-framework)
 - [Skills System Documentation](/en/skills/01-usage-guide)
 - [GitHub Issues](https://github.com/host1syan/claude-cn/issues)

@@ -2,12 +2,12 @@
 layout: home
 
 hero:
-  name: Claude Code Cn
+  name: ClaudeCN
   text: 全中文提示词的 Claude 智能体工作台
   tagline: CLI、桌面端和本地服务端一体化，内置 Claude CN、Kilo Free 渠道，支持长任务缓存与多 Agent 工作流
   image:
     src: /images/logo-horizontal.svg
-    alt: Claude Code Cn
+    alt: ClaudeCN
   actions:
     - theme: brand
       text: 快速开始
@@ -59,4 +59,4 @@ features:
     details: RTK 工具输出压缩与 Caveman 模型输出压缩属于实验方向，以当前构建版本为准
 ---
 
-Claude Code Cn 面向中文开发工作流，提供 CLI、桌面端和本地服务端三种入口。先从[快速开始](/guide/quick-start)启动，再按需配置模型渠道、记忆、Skills、Computer Use、远程访问和 IM 适配器。
+ClaudeCN 面向中文开发工作流，提供 CLI、桌面端和本地服务端三种入口。先从[快速开始](/guide/quick-start)启动，再按需配置模型渠道、记忆、Skills、Computer Use、远程访问和 IM 适配器。

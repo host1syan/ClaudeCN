@@ -2,12 +2,12 @@
 layout: home
 
 hero:
-  name: Claude Code Cn
+  name: ClaudeCN
   text: Claude agent workbench with Chinese-first prompts
   tagline: CLI, desktop app, and local server with Claude CN, Kilo Free, prompt-cache support, and multi-agent workflows
   image:
     src: /images/logo-horizontal.svg
-    alt: Claude Code Cn
+    alt: ClaudeCN
   actions:
     - theme: brand
       text: Quick Start
@@ -55,4 +55,4 @@ features:
     details: RTK tool-output and Caveman model-output compression are experimental directions; check current build availability
 ---
 
-Claude Code Cn targets Chinese development workflows with three entry points: CLI, desktop app, and local server. Start with [Quick Start](/en/guide/quick-start), then configure providers, memory, Skills, Computer Use, remote access, and IM adapters as needed.
+ClaudeCN targets Chinese development workflows with three entry points: CLI, desktop app, and local server. Start with [Quick Start](/en/guide/quick-start), then configure providers, memory, Skills, Computer Use, remote access, and IM adapters as needed.

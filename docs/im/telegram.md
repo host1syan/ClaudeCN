@@ -26,7 +26,7 @@ Telegram 方案适合个人私聊远程使用。当前实现只处理 `private c
 
 ![复制 Bot Token](../images/im/telegram/03-bot-token.png)
 
-## 2. 在 Claude Code Cn 桌面端填写
+## 2. 在 ClaudeCN 桌面端填写
 
 ### 2.1 填写 Bot Token
 
@@ -42,7 +42,7 @@ Telegram 方案适合个人私聊远程使用。当前实现只处理 `private c
 
 ## 3. 机器人与桌面端配对
 
-随便给刚才创建的机器人发送一条消息，按提示输入配对码。看到下面的配对成功提示，就可以从手机 Telegram 远程驱动桌面端 Claude Code Cn 了：
+随便给刚才创建的机器人发送一条消息，按提示输入配对码。看到下面的配对成功提示，就可以从手机 Telegram 远程驱动桌面端 ClaudeCN 了：
 
 ![配对成功](../images/im/telegram/06-pair-success.png)
 

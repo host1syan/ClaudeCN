@@ -55,7 +55,7 @@ Claude's "dreaming" mechanism -- a deep dive into background silent memory conso
 
 ## Illustrations
 
-All illustrations use a dark background (#1a1a2e) + Claude Code Cn orange-blue accent (#FF7A00) style, consistent with the official Claude Code documentation.
+All illustrations use a dark background (#1a1a2e) + ClaudeCN orange-blue accent (#FF7A00) style, consistent with the official Claude Code documentation.
 
 | Image | Description | Size |
 |-------|-------------|------|
@@ -113,7 +113,7 @@ All illustrations use a dark background (#1a1a2e) + Claude Code Cn orange-blue a
 
 ## Related Resources
 
-- [Claude Code Cn Home](/en/)
+- [ClaudeCN Home](/en/)
 - [Memory system source code](https://github.com/host1syan/claude-cn/tree/main/src/memdir/)
 - [Auto-extraction service](https://github.com/host1syan/claude-cn/tree/main/src/services/extractMemories/)
 - [AutoDream service](https://github.com/host1syan/claude-cn/tree/main/src/services/autoDream/)

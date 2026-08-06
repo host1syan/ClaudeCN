@@ -58,7 +58,7 @@
 
 ## 🖼️ 配图说明
 
-所有配图采用深色背景（#1a1a2e）+ Claude Code Cn 橙蓝品牌色（#FF7A00）风格，与 Claude Code 官方文档一致。
+所有配图采用深色背景（#1a1a2e）+ ClaudeCN 橙蓝品牌色（#FF7A00）风格，与 Claude Code 官方文档一致。
 
 | 图片 | 说明 | 所属文档 |
 |------|------|----------|
@@ -121,7 +121,7 @@
 
 ## 🔗 相关资源
 
-- [Claude Code Cn 主页](/)
+- [ClaudeCN 主页](/)
 - [记忆系统文档](/memory/01-usage-guide)
 - [Agent Tool 源码](https://github.com/host1syan/claude-cn/tree/main/src/tools/AgentTool/)
 - [Swarm 基础设施](https://github.com/host1syan/claude-cn/tree/main/src/utils/swarm/)

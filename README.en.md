@@ -1,7 +1,7 @@
-# Claude Code Cn
+# ClaudeCN
 
 <p align="center">
-  <img src="docs/images/app-icon.svg" alt="Claude Code Cn" width="240">
+  <img src="docs/images/app-icon.svg" alt="ClaudeCN" width="240">
 </p>
 
 <div align="center">
@@ -15,7 +15,7 @@
 
 </div>
 
-Claude Code Cn is a Claude-like agent workbench built around Chinese prompts. It runs on macOS, Windows, and Linux and provides a terminal CLI, local server, and desktop app. Multi-session management, projects, branch and Worktree isolation, code diffs, permission review, model providers, Computer Use, H5 remote access, IM adapters, and scheduled tasks live in one workspace.
+ClaudeCN is a Claude-like agent workbench built around Chinese prompts. It runs on macOS, Windows, and Linux and provides a terminal CLI, local server, and desktop app. Multi-session management, projects, branch and Worktree isolation, code diffs, permission review, model providers, Computer Use, H5 remote access, IM adapters, and scheduled tasks live in one workspace.
 
 Chinese-first prompts reduce language switching in Chinese development workflows. Actual token usage depends on model, task complexity, and context. Model, upstream gateway, and platform policies still apply.
 

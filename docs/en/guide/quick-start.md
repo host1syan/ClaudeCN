@@ -1,6 +1,6 @@
 # Quick Start
 
-Claude Code Cn provides a CLI, desktop app, and local server. Install Bun first, then choose a model provider.
+ClaudeCN provides a CLI, desktop app, and local server. Install Bun first, then choose a model provider.
 
 ## 1. Install Bun
 

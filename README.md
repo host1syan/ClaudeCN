@@ -1,7 +1,7 @@
-# Claude Code Cn
+# ClaudeCN
 
 <p align="center">
-  <img src="docs/images/app-icon.svg" alt="Claude Code Cn" width="240">
+  <img src="docs/images/app-icon.svg" alt="ClaudeCN" width="240">
 </p>
 
 <div align="center">
@@ -15,7 +15,7 @@
 
 </div>
 
-Claude Code Cn 是一套全中文提示词为主的仿 Claude 智能体工作台，支持 macOS、Windows、Linux。项目同时提供终端 CLI、本地服务端和桌面端，把多会话、多项目、分支与 Worktree 隔离、代码 Diff、权限审批、模型渠道、Computer Use、H5 远程访问、IM 接入和定时任务集中到一个工作台。
+ClaudeCN 是一套全中文提示词为主的仿 Claude 智能体工作台，支持 macOS、Windows、Linux。项目同时提供终端 CLI、本地服务端和桌面端，把多会话、多项目、分支与 Worktree 隔离、代码 Diff、权限审批、模型渠道、Computer Use、H5 远程访问、IM 接入和定时任务集中到一个工作台。
 
 中文提示词减少中英切换，适合中文开发和长任务工作流。实际 Token 消耗取决于模型、任务复杂度和上下文内容；模型、上游网关及平台自身策略仍然有效。
 

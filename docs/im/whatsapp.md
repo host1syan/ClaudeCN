@@ -4,7 +4,7 @@
 
 ## 适用场景
 
-WhatsApp 方案适合用自己的 WhatsApp 个人号在私聊里远程驱动 Claude Code Cn。当前实现只处理个人私聊，不处理群聊、频道、状态广播。
+WhatsApp 方案适合用自己的 WhatsApp 个人号在私聊里远程驱动 ClaudeCN。当前实现只处理个人私聊，不处理群聊、频道、状态广播。
 
 实现入口：`adapters/whatsapp/index.ts`
 
@@ -20,13 +20,13 @@ WhatsApp 方案适合用自己的 WhatsApp 个人号在私聊里远程驱动 Cla
 - 不需要配置 Webhook callback URL
 - 不需要申请或审核 message template
 
-它的工作方式更接近“把 Claude Code Cn 作为一台已登录的 WhatsApp Web 设备挂到你的个人 WhatsApp 账号上”：
+它的工作方式更接近“把 ClaudeCN 作为一台已登录的 WhatsApp Web 设备挂到你的个人 WhatsApp 账号上”：
 
 1. 桌面端用 Baileys 生成 WhatsApp Web 登录二维码
 2. 你用手机 WhatsApp 的 `Linked devices` 扫码
 3. 本机保存 WhatsApp Web auth state
 4. adapter 监听这个账号收到的个人私聊消息
-5. 已授权用户发来的消息会被转成 Claude Code Cn session 输入
+5. 已授权用户发来的消息会被转成 ClaudeCN session 输入
 6. Claude 的回复再由这个 WhatsApp 账号发回同一个私聊
 
 因此，WhatsApp 这里没有 Telegram BotFather、飞书机器人、钉钉 Stream 机器人那种“后台创建 bot”的概念。对用户来说，对话对象就是你扫码绑定的那个 WhatsApp 账号本身。
