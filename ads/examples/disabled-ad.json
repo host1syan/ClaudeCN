@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "revision": "2026-08-06-disabled",
+  "ads": [
+    {
+      "id": "disabled-ad-demo",
+      "enabled": false,
+      "weight": 1,
+      "title": "广告位招租",
+      "summary": "面向开发者的广告位开放，合作请联系 host@1syan.com。",
+      "detail": "这条广告当前已下线。正式 manifest 中将 enabled 设为 true 即可展示广告位招租内容；有意合作，请联系 host@1syan.com。"
+    }
+  ]
+}

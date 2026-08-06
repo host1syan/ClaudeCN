@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "revision": "2026-08-06-001",
+  "ads": [
+    {
+      "id": "understand-code",
+      "enabled": true,
+      "weight": 1,
+      "title": "广告位招租",
+      "summary": "面向开发者的广告位开放，合作请联系 host@1syan.com。",
+      "detail": "让你的产品、工具或社区出现在开发者正在工作的地方。Claude CN Companion 在新建会话与思考面板提供克制的赞助展示，不打断编码流程；有意合作，请联系 host@1syan.com。"
+    },
+    {
+      "id": "isolated-work",
+      "enabled": true,
+      "weight": 1,
+      "title": "广告位招租",
+      "summary": "面向开发者的广告位开放，合作请联系 host@1syan.com。",
+      "detail": "想让更多开发者认识你的产品？这里适合放置一句清晰主张、一段产品介绍或版本公告。广告只读展示，不执行远程脚本；广告位招租，有意请联系 host@1syan.com。"
+    },
+    {
+      "id": "multiple-sessions",
+      "enabled": true,
+      "weight": 1,
+      "title": "广告位招租",
+      "summary": "面向开发者的广告位开放，合作请联系 host@1syan.com。",
+      "detail": "开发者打开新会话时，正是发现好工具、好服务和好社区的时刻。用一条简洁赞助文案建立首次印象，也可在思考内容展开时展示更完整介绍。合作请联系 host@1syan.com。"
+    },
+    {
+      "id": "review-changes",
+      "enabled": true,
+      "weight": 1,
+      "title": "广告位招租",
+      "summary": "面向开发者的广告位开放，合作请联系 host@1syan.com。",
+      "detail": "思考中展开后，这里可以成为一张安静的赞助卡片：先说清你解决什么问题，再留下合作入口。思考完成后，广告区域自动恢复真实思考内容，不遮挡用户信息。广告位招租，有意联系 host@1syan.com。"
+    }
+  ]
+}
