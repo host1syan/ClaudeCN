@@ -6,7 +6,6 @@
 
 QQ 方案适合在中国区环境下通过 QQ 机器人与 Claude Code 对话。当前实现支持私聊和群聊。
 
-实现入口：`adapters/qq/index.ts`
 
 ## 1. 扫码绑定（推荐）
 
@@ -59,13 +58,7 @@ QQ Bot 支持以下文本命令：
 
 ## 启动 adapter
 
-桌面端会自动把 adapter 作为 sidecar 拉起。如果你在本地开发，需要手动启动：
-
-```bash
-cd adapters
-bun install
-bun run qq
-```
+桌面端配置并保存凭据后，会自动将对应 adapter 作为 sidecar 拉起，无需手动启动。
 
 ## 环境变量覆盖（可选）
 
@@ -94,13 +87,3 @@ export ADAPTER_SERVER_URL="ws://127.0.0.1:3456"
 - 配对码是否仍在 60 分钟有效期内
 - 发的是不是桌面端当前这一枚（重新生成后旧的立即失效）
 - `qq.pairedUsers` 里是否已经写入当前用户 ID
-
-## 源码入口
-
-- `adapters/qq/index.ts`
-- `adapters/qq/protocol.ts`
-- `adapters/qq/format.ts`
-- `adapters/qq/media.ts`
-- `adapters/common/pairing.ts`
-- `adapters/common/session-store.ts`
-- `adapters/common/ws-bridge.ts`

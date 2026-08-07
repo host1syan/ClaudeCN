@@ -31,7 +31,7 @@ flowchart TD
     L --> R["连接 /ws/:sessionId"]
     Q --> R
 
-    R --> S["adapters/common/ws-bridge.ts"]
+    R --> S["Adapter 进程<br/>WS 桥接"]
     S --> T["Desktop Server"]
     T --> U["Claude Code session / CLI 子进程"]
 
@@ -74,23 +74,9 @@ flowchart TD
 
 微信、钉钉和 WhatsApp 的“扫码绑定”只负责把机器人或账号凭据写到本机；具体 IM 用户仍然需要发送配对码，或被加入 `allowedUsers`。
 
-### 3. 启动对应 Adapter 进程
+### 3. 启动对应 IM 接入
 
-发布版桌面端会在本地 server 启动后自动拉起 adapter sidecar，并在保存凭据、扫码绑定或解绑后重启 adapter 让新配置生效。本地开发或单独调试 adapter 时可以手动启动：
-
-```bash
-cd adapters
-bun install
-bun run telegram
-# 或
-bun run feishu
-# 或
-bun run wechat
-# 或
-bun run dingtalk
-# 或
-bun run whatsapp
-```
+在桌面端完成配置并保存凭据后，对应的 IM Adapter 会自动启动并应用配置。之后直接在对应 IM 平台私聊机器人即可。
 
 ### 4. 在 IM 里私聊 Bot
 

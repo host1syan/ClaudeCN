@@ -6,7 +6,6 @@
 
 WhatsApp 方案适合用自己的 WhatsApp 个人号在私聊里远程驱动 ClaudeCN。当前实现只处理个人私聊，不处理群聊、频道、状态广播。
 
-实现入口：`adapters/whatsapp/index.ts`
 
 ## 它不是“创建机器人”
 
@@ -81,13 +80,7 @@ WhatsApp 方案适合用自己的 WhatsApp 个人号在私聊里远程驱动 Cla
 
 ## 3. 启动 adapter
 
-发布版桌面端会自动拉起 adapter sidecar。本地开发或单独调试时：
-
-```bash
-cd adapters
-bun install
-bun run whatsapp
-```
+桌面端配置并保存凭据后，会自动将对应 adapter 作为 sidecar 拉起，无需手动启动。
 
 ## 支持的命令
 
@@ -126,7 +119,7 @@ export ADAPTER_SERVER_URL="ws://127.0.0.1:3456"
 
 ### adapter 启动时报没有绑定账号
 
-先在桌面端 WhatsApp 标签页扫码绑定。`bun run whatsapp` 不会单独弹出二维码。
+先在桌面端 WhatsApp 标签页扫码绑定。
 
 ### 绑定后发消息提示未授权
 
@@ -135,13 +128,3 @@ export ADAPTER_SERVER_URL="ws://127.0.0.1:3456"
 ### WhatsApp 提示已登出
 
 在桌面端 WhatsApp 标签页解除绑定后重新扫码。解除绑定会删除本机 WhatsApp auth state。
-
-## 源码入口
-
-- `adapters/whatsapp/index.ts`
-- `adapters/whatsapp/protocol.ts`
-- `adapters/whatsapp/session.ts`
-- `adapters/whatsapp/media.ts`
-- `adapters/common/pairing.ts`
-- `adapters/common/session-store.ts`
-- `adapters/common/ws-bridge.ts`

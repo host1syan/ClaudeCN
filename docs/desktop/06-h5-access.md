@@ -19,41 +19,18 @@ H5 设置保存到 `~/.claude/claude-cn/settings.json`。为让已配对设备�
 
 ### 无桌面界面时开启
 
-无界面的 Linux 服务器也可以通过只允许本机调用的控制接口启用 H5。源码运行时先构建 Web UI，再从项目根目录启动服务端；服务端会自动提供 `desktop/dist` 中的页面。需要局域网或反向代理访问时，让它监听外部接口：
+无界面的 Linux 服务器或服务器部署场景，推荐使用 [Docker 部署](../../DOCKER_README.md)。通过环境变量设置 H5 Token：
 
 ```bash
-cd desktop
-bun run build
-cd ..
-SERVER_HOST=0.0.0.0 SERVER_PORT=3456 bun run src/server/index.ts
+docker run -d \
+  --name claude-cn \
+  -p 3456:3456 \
+  -e CLAUDE_H5_TOKEN=你的令牌 \
+  -v claude-data:/data \
+  host1syan/claude-cn
 ```
 
-如果不是从项目根目录启动服务端，请额外设置 `CLAUDE_H5_DIST_DIR` 为 `desktop/dist` 的绝对路径。没有构建产物时，控制接口仍可生成 Token，但浏览器入口会返回 404。
-
-再从服务器本机的另一个终端生成 Token。响应 JSON 的 `token` 字段就是浏览器需要填写的完整 Token：
-
-```bash
-curl -sS -X POST http://127.0.0.1:3456/api/h5-access/enable
-```
-
-配置实际前端来源；`allowedOrigins` 必须写浏览器地址栏中前端页面的来源，不能使用通配符。使用反向代理时还可以设置公开访问地址：
-
-```bash
-curl -sS -X PUT http://127.0.0.1:3456/api/h5-access \
-  -H 'Content-Type: application/json' \
-  --data '{
-    "allowedOrigins": ["https://cc.example.com"],
-    "publicBaseUrl": "https://cc-api.example.com"
-  }'
-```
-
-稍后需要重新取回完整 Token 或核对配置时，只能在服务器本机调用：
-
-```bash
-curl -sS http://127.0.0.1:3456/api/h5-access
-```
-
-如果只是通过 SSH 端口转发在自己的电脑上访问，请保持服务监听 `127.0.0.1`，无需开启 H5；完整命令见 [安装指南](./04-installation.md#无界面-linux-服务器)。
+容器默认监听外部接口，局域网或手机可通过这个 Token 登录访问。浏览器入口使用前端地址加 `serverUrl` 参数（见下文）；需要反向代理时将其指向本服务根地址。
 
 ## 访问地址
 

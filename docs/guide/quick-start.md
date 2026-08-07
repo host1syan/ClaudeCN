@@ -1,86 +1,42 @@
 # 快速开始
 
-ClaudeCN 提供 CLI、桌面端和本地服务端三种入口。首次使用先安装 Bun，再选择模型渠道。
+ClaudeCN 提供**桌面客户端、终端 CLI、Docker** 三种使用方式。首次使用先在设置中选择模型渠道，再开始对话。
 
-## 1. 安装 Bun
+## 1. 选择使用方式并安装
 
-```bash
-# macOS / Linux
-curl -fsSL https://bun.sh/install | bash
+| 方式 | 适用场景 | 安装 |
+|------|----------|------|
+| 桌面客户端 | 日常图形化使用 | 从 [GitHub Releases](https://github.com/host1syan/claude-cn/releases) 下载安装包 |
+| Docker | 浏览器访问、远程部署 | 见 [Docker 部署](../../DOCKER_README.md) |
+| 终端 CLI | 命令行使用 | 随桌面端/服务端一起提供 |
 
-# macOS（Homebrew）
-brew install bun
+桌面端支持 macOS、Windows、Linux，具体安装步骤见[桌面端安装指南](../desktop/04-installation.md)。
 
-# Windows（PowerShell）
-powershell -c "irm bun.sh/install.ps1 | iex"
-```
+## 2. 配置模型渠道
 
-> 精简版 Linux 如提示 `unzip is required`，先运行 `apt update && apt install -y unzip`。
+首次启动后，在**设置**中选择模型渠道：
 
-## 2. 安装依赖
-
-```bash
-bun install
-cp .env.example .env
-```
-
-## 3. 选择模型渠道
-
-可以使用自己的 Anthropic 兼容 API，也可以在桌面端设置中选择内置渠道：
-
-- **Claude CN**：项目内置渠道配置，提供当前版本可用的免费模型路由。
+- **Claude CN**：内置渠道配置，提供当前版本可用的免费模型路由。
 - **Kilo Free**：Kilo Gateway 免费模型渠道，默认模型为 `stepfun/step-3.7-flash:free`。
+- **自定义 API**：使用自己的 Anthropic 兼容 API，配置 `ANTHROPIC_BASE_URL`、`ANTHROPIC_AUTH_TOKEN` 和 `ANTHROPIC_MODEL`。
 
-免费渠道依赖上游服务，模型目录、额度、限流和可用性可能变化。不要把免费渠道当作永久、无限或固定可用的服务。第三方模型和代理配置见[第三方模型](./third-party-models.md)。
+> 免费渠道依赖上游服务，模型目录、额度、限流和可用性可能变化。不要把免费渠道当作永久、无限或固定可用的服务。第三方模型和代理配置见[第三方模型](./third-party-models.md)。
 
-使用自有渠道时，编辑 `.env` 填入 API 凭据，完整变量说明见[环境变量配置](./env-vars.md)。
+## 3. 新建会话并开始
 
-## 4. 启动
+1. 点击侧边栏 `+` 新建会话。
+2. 选择关联的**工作目录**（项目文件夹）。
+3. 输入第一条消息，开始与 AI 对话。
 
-### macOS / Linux
+ClaudeCN 支持在会话中执行任务、查看代码改动、审批权限、切换分支和隔离 Worktree 等操作，详见[桌面端功能](../desktop/03-features.md)。
 
-```bash
-./bin/claude-cn                          # 交互 TUI 模式
-./bin/claude-cn -p "your prompt here"    # 无头模式
-./bin/claude-cn --help                   # 查看所有选项
-```
+## 4. 按需扩展
 
-### Windows
-
-> **前置要求**：必须安装 [Git for Windows](https://git-scm.com/download/win)。
-
-```powershell
-# PowerShell / cmd 直接调用 Bun
-bun --env-file=.env ./src/entrypoints/cli.tsx
-
-# 或在 Git Bash 中运行
-./bin/claude-cn
-```
-
-## 5. 启动桌面端
-
-桌面端需要本地服务端：
-
-```bash
-SERVER_PORT=3456 bun run src/server/index.ts
-cd desktop && bun install && bun run dev
-```
-
-## 6. 全局使用（可选）
-
-将 `bin/` 加入 PATH 后，可在任意目录启动。详见[全局使用指南](./global-usage.md)：
-
-```bash
-export PATH="$HOME/path/to/claude-code-cn/bin:$PATH"
-```
-
-## 7. 降级模式
-
-如果 Ink TUI 出现问题，可以使用 Recovery CLI 模式：
-
-```bash
-CLAUDE_CODE_FORCE_RECOVERY_CLI=1 ./bin/claude-cn
-```
+- [接入第三方模型](./third-party-models.md)
+- [配置环境变量](./env-vars.md)
+- [使用记忆系统](../memory/)
+- [配置 IM 远程接入](../im/)
+- [启用 Computer Use](../features/computer-use.md)
 
 ## 缓存提示
 

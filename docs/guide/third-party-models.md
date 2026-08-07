@@ -116,7 +116,9 @@ litellm --config litellm_config.yaml --port 4000
 
 有两种配置方式，任选其一：
 
-#### 方式 A：通过 `.env` 文件
+#### 方式 A：通过环境变量
+
+在桌面端设置或进程环境变量中配置：
 
 ```bash
 ANTHROPIC_AUTH_TOKEN=sk-anything
@@ -152,7 +154,9 @@ CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1
 
 ### 5. 启动并验证
 
-```bash
+在桌面端或终端 CLI 中发起对话验证：
+
+```
 ./bin/claude-cn
 ```
 
@@ -177,7 +181,7 @@ DISABLE_TELEMETRY=1
 CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1
 ```
 
-### MiniMax（已在 .env.example 中配置）
+### MiniMax
 
 MiniMax 提供 Anthropic 兼容接口，支持直接接入，无需代理。可用模型：
 

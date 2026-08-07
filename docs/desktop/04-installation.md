@@ -52,42 +52,9 @@ sudo apt install ./Claude-Code-Cn-<版本>-linux-amd64.deb
 
 ## Web UI 模式
 
-如果桌面端安装遇到问题，可以直接通过浏览器使用 Web UI。在项目根目录下分别启动服务端和前端：
+想要不安装桌面客户端、直接用浏览器使用，或在无界面 Linux 服务器上部署时，推荐使用 [Docker 部署](../../DOCKER_README.md)：运行容器后浏览器访问 `http://localhost:3456` 即可，无需在本机安装任何环境。
 
-```bash
-# 1. 启动服务端（在项目根目录）
-SERVER_PORT=3456 bun run src/server/index.ts
-
-# 2. 启动前端（在 desktop 目录）
-cd desktop
-bun run dev --host 127.0.0.1 --port 2024
-```
-
-启动后浏览器访问 `http://127.0.0.1:2024` 即可。
-
-本机通过 `127.0.0.1` 使用 Web UI 时，不需要开启 H5 访问，也不需要填写 H5 Token。服务端会把真正的本机回环请求视为可信本地访问；这个豁免不会扩展到局域网地址或反向代理。
-
-### 无界面 Linux 服务器
-
-如果服务器没有桌面环境，推荐先使用 SSH 同时转发前端和后端端口：
-
-```bash
-# 在服务器上分别启动后端与前端，仍只监听回环地址
-SERVER_PORT=3456 bun run src/server/index.ts
-cd desktop
-bun run dev --host 127.0.0.1 --port 2024
-
-# 在自己的电脑上执行
-ssh -L 2024:127.0.0.1:2024 -L 3456:127.0.0.1:3456 user@example.com
-```
-
-然后在自己的电脑上打开：
-
-```text
-http://127.0.0.1:2024/?serverUrl=http%3A%2F%2F127.0.0.1%3A3456
-```
-
-这条路径不把服务暴露到局域网，因此同样不需要 H5 Token。如果确实要从局域网或反向代理访问，请按 [H5 访问](./06-h5-access.md#无桌面界面时开启) 在服务器本机启用 Token、配置允许来源，再让服务监听外部接口。
+如果需要在局域网或其他设备上访问，可结合 [H5 访问](./06-h5-access.md) 使用令牌认证。
 
 ## 常见问题
 

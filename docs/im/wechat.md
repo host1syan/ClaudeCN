@@ -8,7 +8,6 @@
 
 当前只按私聊用户维度授权和保存会话，不面向微信群聊设计。
 
-实现入口：`adapters/wechat/index.ts`
 
 ## 1. 扫码绑定微信机器人账号
 
@@ -95,15 +94,9 @@
 
 解绑机器人账号后需要重新扫码绑定。解绑用户后，该用户需要重新发送新的配对码才能继续使用。
 
-## 本地开发启动
+## 启动 adapter
 
-发布版桌面端会自动启动 adapter sidecar。只有本地开发或单独调试时才需要手动运行：
-
-```bash
-cd adapters
-bun install
-bun run wechat
-```
+桌面端配置并保存凭据后，会自动将对应 adapter 作为 sidecar 拉起，无需手动启动。
 
 可选环境变量：
 
@@ -144,13 +137,3 @@ export ADAPTER_SERVER_URL="ws://127.0.0.1:3456"
 ### 会话没恢复
 
 检查 `~/.claude/adapter-sessions.json` 是否能正常写入，以及 Desktop server 里的 session 是否仍存在。
-
-## 源码入口
-
-- `adapters/wechat/index.ts`
-- `adapters/wechat/protocol.ts`
-- `adapters/wechat/media.ts`
-- `adapters/common/pairing.ts`
-- `adapters/common/session-store.ts`
-- `adapters/common/ws-bridge.ts`
-- `adapters/common/http-client.ts`

@@ -6,7 +6,6 @@
 
 Telegram 方案适合个人私聊远程使用。当前实现只处理 `private chat`，不处理群聊。
 
-实现入口：`adapters/telegram/index.ts`
 
 ## 1. 创建 Telegram 机器人
 
@@ -74,21 +73,9 @@ Telegram 侧有一层流式缓冲：
 - text delta 逐步累积
 - 完成时按 4000 字分片发送
 
-对应公共模块：
-
-- `adapters/common/message-buffer.ts`
-- `adapters/common/format.ts`
-- `adapters/common/ws-bridge.ts`
-
 ## 启动 adapter
 
-桌面端会自动把 adapter 作为 sidecar 拉起。如果你在本地开发，需要手动启动：
-
-```bash
-cd adapters
-bun install
-bun run telegram
-```
+桌面端配置并保存凭据后，会自动将对应 adapter 作为 sidecar 拉起，无需手动启动。
 
 ## 环境变量覆盖（可选）
 
@@ -105,7 +92,7 @@ export ADAPTER_SERVER_URL="ws://127.0.0.1:3456"
 
 ### 能打开设置页但 bot 不工作
 
-Webapp 只负责配置，不会自动拉起 `bun run telegram`（桌面端发布版会通过 sidecar 自动拉起）。
+Webapp 只负责配置；保存配置后由桌面端自动拉起对应 adapter。
 
 ### 发消息提示未授权
 
@@ -117,11 +104,3 @@ Webapp 只负责配置，不会自动拉起 `bun run telegram`（桌面端发布
 ### 每次重启后会话丢失
 
 检查 `~/.claude/adapter-sessions.json` 是否能正常写入，以及 Desktop server 的 session 是否仍存在。
-
-## 源码入口
-
-- `adapters/telegram/index.ts`
-- `adapters/common/pairing.ts`
-- `adapters/common/session-store.ts`
-- `adapters/common/ws-bridge.ts`
-- `adapters/common/http-client.ts`

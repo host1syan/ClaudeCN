@@ -6,7 +6,6 @@
 
 飞书方案适合在中国区环境下通过企业自建应用私聊 Claude Code。当前实现只处理 `p2p` 私聊，不处理群聊。
 
-实现入口：`adapters/feishu/index.ts`
 
 ## 1. 一键创建飞书机器人
 
@@ -114,13 +113,7 @@
 
 ## 启动 adapter
 
-桌面端会自动把 adapter 作为 sidecar 拉起。如果你在本地开发，需要手动启动：
-
-```bash
-cd adapters
-bun install
-bun run feishu
-```
+桌面端配置并保存凭据后，会自动将对应 adapter 作为 sidecar 拉起，无需手动启动。
 
 ## 环境变量覆盖（可选）
 
@@ -156,11 +149,3 @@ OpenClaw 官方模板已预配 `im:message`、`im:message:send_as_bot`、`im:res
 ### 会话没恢复
 
 检查 `~/.claude/adapter-sessions.json` 是否能正常写入，以及 Desktop server 里的 session 是否仍存在。
-
-## 源码入口
-
-- `adapters/feishu/index.ts`
-- `adapters/common/pairing.ts`
-- `adapters/common/session-store.ts`
-- `adapters/common/ws-bridge.ts`
-- `adapters/common/http-client.ts`
