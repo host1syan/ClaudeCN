@@ -39,14 +39,6 @@ Temporary macOS builds may require manual approval; unsigned Windows installers 
 - **H5 and IM access**: remote sessions through browser, Telegram, Feishu, WeChat, and DingTalk.
 - **Scheduled tasks and usage statistics**: plan work and inspect token trends.
 
-## Screenshots
-
-| | |
-|------|------|
-| ![Main UI](docs/images/desktop_ui/01_full_ui.png) | ![Edit and Diff](docs/images/desktop_ui/02_edit_code.png) |
-| ![Permissions and Questions](docs/images/desktop_ui/03_ask_question_and_permission.png) | ![Task list](docs/images/desktop_ui/04_tasktodo_list.png) |
-| ![H5 Access](docs/images/desktop_ui/12_h5_access.png) | ![Token usage](docs/images/desktop_ui/11_token_usage.png) |
-
 ## Documentation
 
 | Document | Description |

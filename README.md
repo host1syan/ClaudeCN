@@ -39,14 +39,6 @@ macOS 临时包可能需要手动放行；Windows 未签名安装包可能触发
 - **H5 与 IM 接入**：从手机或其他设备访问会话，也可通过 Telegram、飞书、微信、钉钉等渠道远程对话和审批。
 - **定时任务与用量统计**：创建计划任务，查看 Token 使用趋势。
 
-## 界面一览
-
-| | |
-|------|------|
-| ![主界面](docs/images/desktop_ui/01_full_ui.png) | ![代码编辑与 Diff](docs/images/desktop_ui/02_edit_code.png) |
-| ![权限与提问](docs/images/desktop_ui/03_ask_question_and_permission.png) | ![任务列表](docs/images/desktop_ui/04_tasktodo_list.png) |
-| ![H5 访问](docs/images/desktop_ui/12_h5_access.png) | ![用量统计](docs/images/desktop_ui/11_token_usage.png) |
-
 ## 文档
 
 | 文档 | 说明 |
