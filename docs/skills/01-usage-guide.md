@@ -1,6 +1,6 @@
-# Claude Code Skills 系统 — 使用指南
+# ClaudeCN Skills 系统 — 使用指南
 
-> Skills 是 Claude Code 的扩展能力引擎，让你用 Markdown 文件定义专属的自动化工作流。
+> Skills 是 ClaudeCN 的扩展能力引擎，让你用 Markdown 文件定义专属的自动化工作流。
 
 <p align="center">
 <a href="#一什么是-skills">Skills 是什么</a> · <a href="#二六种-skill-来源">六种来源</a> · <a href="#三skill-定义格式">定义格式</a> · <a href="#四调用方式">调用方式</a> · <a href="#五执行上下文">执行上下文</a> · <a href="#六条件激活">条件激活</a> · <a href="#七权限控制">权限控制</a> · <a href="#八快速参考">快速参考</a>
@@ -12,7 +12,7 @@
 
 ## 一、什么是 Skills？
 
-Skills 是 Claude Code 的**可扩展能力插件系统**。每个 Skill 是一个 Markdown 文件（含 YAML frontmatter），定义了一段专门的提示词和行为配置，让 Claude 在特定场景下执行专业化的工作流。
+Skills 是 ClaudeCN 的**可扩展能力插件系统**。每个 Skill 是一个 Markdown 文件（含 YAML frontmatter），定义了一段专门的提示词和行为配置，让 Claude 在特定场景下执行专业化的工作流。
 
 核心能力：
 
@@ -31,7 +31,7 @@ Skills 是 Claude Code 的**可扩展能力插件系统**。每个 Skill 是一�
 
 ![Skill 来源类型](./images/02-skill-sources.png)
 
-Claude Code 从 6 个不同来源加载 Skills，按优先级从高到低：
+ClaudeCN 从 6 个不同来源加载 Skills，按优先级从高到低：
 
 ### 1. Bundled（内置 Skills）
 

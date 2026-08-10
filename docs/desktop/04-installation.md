@@ -4,7 +4,7 @@
 
 ## 下载
 
-前往 [GitHub Releases](https://github.com/host1syan/claude-cn/releases) 下载对应平台的安装包：
+前往 [GitHub Releases](https://github.com/host1syan/ClaudeCN/releases) 下载对应平台的安装包：
 
 | 平台 | 文件 |
 |------|------|

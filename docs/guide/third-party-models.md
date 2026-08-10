@@ -12,7 +12,7 @@
 ## 原理
 
 ```
-claude-code-cn ──Anthropic协议──▶ LiteLLM Proxy ──OpenAI协议──▶ 目标模型 API
+ClaudeCN ──Anthropic协议──▶ LiteLLM Proxy ──OpenAI协议──▶ 目标模型 API
                                       (协议转换)
 ```
 
@@ -210,7 +210,7 @@ CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1
 
 ## 方式三：其他代理工具
 
-社区还有一些专门为 Claude Code 做的代理工具：
+社区还有一些专门为 ClaudeCN 做的代理工具：
 
 | 工具 | 说明 | 链接 |
 |------|------|------|

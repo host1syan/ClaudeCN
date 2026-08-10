@@ -1,6 +1,6 @@
-# Claude Code 多 Agent 系统 — 使用指南
+# ClaudeCN 多 Agent 系统 — 使用指南
 
-> 让 Claude Code 同时调度多个专业代理，并行处理复杂任务。
+> 让 ClaudeCN 同时调度多个专业代理，并行处理复杂任务。
 
 <p align="center">
 <a href="#一什么是多-agent-系统">多 Agent 系统</a> · <a href="#二六种内置-agent">六种内置 Agent</a> · <a href="#三如何生成-agent">如何生成 Agent</a> · <a href="#四后台任务管理">后台任务管理</a> · <a href="#五agent-teams--多代理协作">Agent Teams</a> · <a href="#六自定义-agent">自定义 Agent</a> · <a href="#七权限模式">权限模式</a> · <a href="#八快速参考">快速参考</a>
@@ -12,7 +12,7 @@
 
 ## 一、什么是多 Agent 系统？
 
-Claude Code 的多 Agent 系统是一套**智能任务编排框架**，让主代理能够生成多个专业化的子代理（Subagent），各自独立执行不同的任务，最终将结果汇总给用户。
+ClaudeCN 的多 Agent 系统是一套**智能任务编排框架**，让主代理能够生成多个专业化的子代理（Subagent），各自独立执行不同的任务，最终将结果汇总给用户。
 
 核心理念：**把大任务拆分为多个专业小任务，并行执行，提高效率。**
 
@@ -29,7 +29,7 @@ Claude Code 的多 Agent 系统是一套**智能任务编排框架**，让主代
 
 ![六种内置 Agent](./images/02-agent-types.png)
 
-Claude Code 内置了 6 种专业代理，每种都有特定的工具池和适用场景：
+ClaudeCN 内置了 6 种专业代理，每种都有特定的工具池和适用场景：
 
 ### 1. general-purpose（通用代理）
 
@@ -97,7 +97,7 @@ Agent({
 
 ### 5. claude-code-guide（指南代理）
 
-**适用场景**：回答关于 Claude Code、Agent SDK、Claude API 的问题。
+**适用场景**：回答关于 ClaudeCN、Agent SDK、Claude API 的问题。
 
 ```
 Agent({
@@ -113,7 +113,7 @@ Agent({
 
 ### 6. statusline-setup（状态栏配置代理）
 
-**适用场景**：配置 Claude Code 状态栏显示。
+**适用场景**：配置 ClaudeCN 状态栏显示。
 
 - **工具池**：仅 Read + Edit
 - **模型**：Sonnet
@@ -436,7 +436,7 @@ maxTurns: 10
 
 ### 同名 Agent 的来源优先级
 
-当多个来源定义了同名 Agent 时，claude-cn 按以下优先级选择实际生效的定义（从高到低）：
+当多个来源定义了同名 Agent 时，ClaudeCN 按以下优先级选择实际生效的定义（从高到低）：
 
 1. **策略 Agent**（policy）— 组织托管策略
 2. **CLI 参数 Agent**（flag）— 通过 `--agents` 注册

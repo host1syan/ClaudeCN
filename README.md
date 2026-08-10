@@ -6,7 +6,7 @@
 
 <div align="center">
 
-[![GitHub Stars](https://img.shields.io/github/stars/host1syan/claude-cn?style=social)](https://github.com/host1syan/claude-cn/stargazers)
+[![GitHub Stars](https://img.shields.io/github/stars/host1syan/ClaudeCN?style=social)](https://github.com/host1syan/ClaudeCN/stargazers)
 [![Docker Hub](https://img.shields.io/badge/Docker_Hub-host1syan/claude--cn-blue)](https://hub.docker.com/r/host1syan/claude-cn)
 [![中文](https://img.shields.io/badge/中文-当前-blue)](README.md)
 [![English](https://img.shields.io/badge/English-Available-green)](README.en.md)
@@ -19,7 +19,7 @@ ClaudeCN 是一套**全中文提示词**的仿 Claude 智能体工作台，支�
 
 ## 快速上手
 
-1. 前往 [GitHub Releases](https://github.com/host1syan/claude-cn/releases) 下载对应平台的安装包，或用 [Docker 镜像](DOCKER_README.md) 一键部署。
+1. 前往 [GitHub Releases](https://github.com/host1syan/ClaudeCN/releases) 下载对应平台的安装包，或用 [Docker 镜像](DOCKER_README.md) 一键部署。
 2. 首次启动后在设置中配置模型渠道、API Key 和默认模型。
 3. 新建会话并选择工作目录，开始对话。
 

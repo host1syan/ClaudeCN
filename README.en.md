@@ -6,7 +6,7 @@
 
 <div align="center">
 
-[![GitHub Stars](https://img.shields.io/github/stars/host1syan/claude-cn?style=social)](https://github.com/host1syan/claude-cn/stargazers)
+[![GitHub Stars](https://img.shields.io/github/stars/host1syan/ClaudeCN?style=social)](https://github.com/host1syan/ClaudeCN/stargazers)
 [![Docker Hub](https://img.shields.io/badge/Docker_Hub-host1syan/claude--cn-blue)](https://hub.docker.com/r/host1syan/claude-cn)
 [![中文](https://img.shields.io/badge/中文-Available-green)](README.md)
 [![English](https://img.shields.io/badge/English-Current-blue)](README.en.md)
@@ -19,7 +19,7 @@ Chinese-first prompts reduce language switching in Chinese development workflows
 
 ## Quick Start
 
-1. Download the installer for your platform from [GitHub Releases](https://github.com/host1syan/claude-cn/releases), or deploy the [Docker image](DOCKER_README.md).
+1. Download the installer for your platform from [GitHub Releases](https://github.com/host1syan/ClaudeCN/releases), or deploy the [Docker image](DOCKER_README.md).
 2. Configure your provider, API key, and default model in Settings on first launch.
 3. Create a session, pick a working directory, and start chatting.
 

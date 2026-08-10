@@ -29,7 +29,7 @@
 ## 开始使用
 
 1. 阅读[安装指南](./04-installation.md)下载安装对应平台客户端。
-2. 阅读[快速上手](https://github.com/host1syan/claude-cn/blob/main/docs/desktop/01-quick-start.md)了解界面和操作。
+2. 阅读[快速上手](https://github.com/host1syan/ClaudeCN/blob/main/docs/desktop/01-quick-start.md)了解界面和操作。
 3. 配置 AI 模型提供商，开始对话。
 4. 按需启用记忆、Skills、Computer Use、IM 远程接入等功能。
 
@@ -44,4 +44,4 @@
 
 ---
 
-需要更深入的实现细节或参与贡献，请在[官方仓库](https://github.com/host1syan/claude-cn)查看源码与开发文档。
+需要更深入的实现细节或参与贡献，请在[官方仓库](https://github.com/host1syan/ClaudeCN)查看源码与开发文档。

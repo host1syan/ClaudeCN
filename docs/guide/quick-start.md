@@ -6,7 +6,7 @@ ClaudeCN 提供**桌面客户端、终端 CLI、Docker** 三种使用方式。�
 
 | 方式 | 适用场景 | 安装 |
 |------|----------|------|
-| 桌面客户端 | 日常图形化使用 | 从 [GitHub Releases](https://github.com/host1syan/claude-cn/releases) 下载安装包 |
+| 桌面客户端 | 日常图形化使用 | 从 [GitHub Releases](https://github.com/host1syan/ClaudeCN/releases) 下载安装包 |
 | Docker | 浏览器访问、远程部署 | 见 [Docker 部署](../../DOCKER_README.md) |
 | 终端 CLI | 命令行使用 | 随桌面端/服务端一起提供 |
 
