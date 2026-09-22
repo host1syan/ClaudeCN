@@ -1,0 +1,20 @@
+{
+  "channelId": "free-kilo",
+  "schemaVersion": 1,
+  "revision": "2026-09-22-001",
+  "baseUrl": "https://api.kilo.ai/api/gateway",
+  "localToken": "keyless",
+  "defaultModels": {
+    "main": "stepfun/step-3.7-flash:free",
+    "haiku": "",
+    "sonnet": "",
+    "opus": ""
+  },
+  "defaultContextWindow": 128000,
+  "seedModels": [
+    "stepfun/step-3.7-flash:free",
+    "poolside/laguna-xs.2:free",
+    "poolside/laguna-m.1:free",
+    "nvidia/nemotron-3-super-120b-a12b:free"
+  ]
+}
