@@ -1,0 +1,17 @@
+{
+  "channelId": "yk-opencode",
+  "schemaVersion": 1,
+  "revision": "2026-09-22-001",
+  "baseUrl": "https://opencode.ai/zen",
+  "localToken": "public",
+  "defaultModels": {
+    "main": "mimo-v2.6-flash-free",
+    "haiku": "",
+    "sonnet": "",
+    "opus": ""
+  },
+  "defaultContextWindow": 200000,
+  "clientVersion": "1.18.31",
+  "projectId": "global",
+  "requiredToolNames": ["bash", "edit", "glob", "grep", "read"]
+}
