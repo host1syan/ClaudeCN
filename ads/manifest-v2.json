@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "revision": "2026-09-27-001",
+  "revision": "2026-09-27-003",
   "ads": [
     {
       "id": "understand-code",
@@ -9,10 +9,9 @@
       "title": "广告位招租",
       "summary": "广告位开放，合作请联系 host@1syan.com",
       "detail": "让你的产品、工具或社区出现在开发者正在工作的地方。Claude CN Companion 在新建会话与思考面板提供克制的赞助展示，不打断编码流程；有意合作，请联系 host@1syan.com。",
-      "href": "https://github.com/host1syan/ClaudeCN/releases",
       "html": {
         "short": "<div style=\"padding:16px;background:linear-gradient(135deg,#f7f3ea,#efe6d5);border-radius:12px;font-family:serif;height:100%;box-sizing:border-box;display:flex;align-items:center;gap:14px\"><img src=\"https://cdn.jsdelivr.net/gh/host1syan/ClaudeCN@main/ads/sponsor-qr.png\" alt=\"微信赞赏码\" style=\"width:96px;height:96px;border-radius:10px;background:#fff;padding:6px;border:1px solid #e0d7c5;flex:0 0 auto\"><div><h2 style=\"margin:0;font-size:15px;color:#2f2a22;font-weight:600\">扫码支持作者</h2><p style=\"margin:8px 0 0;font-size:12px;line-height:1.7;color:#6b6154\">您的支持是我们前进的动力，我们将免费进行到底。</p></div></div>",
-        "large": "<div style=\"padding:16px;background:linear-gradient(135deg,#eef4ee,#e3ece3);border-radius:12px;font-family:serif;height:100%;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;gap:8px\"><div style=\"font-size:10px;letter-spacing:.1em;color:#6b7d6b;font-weight:700\">版本更新</div><h2 style=\"margin:0;font-size:15px;color:#243024;font-weight:600\">当前程序已更新至 v0.11.15</h2><p style=\"margin:0;font-size:12px;line-height:1.7;color:#5c6b5c\">前往公开仓库查看更新说明与下载方式。</p><a href=\"https://github.com/host1syan/ClaudeCN/releases\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"align-self:flex-start;margin-top:2px;padding:6px 12px;border-radius:8px;background:#3f6b45;color:#fff;font-size:11px;font-weight:700;text-decoration:none\">立即升级 →</a></div>"
+        "large": "<div style=\"padding:16px;background:linear-gradient(135deg,#eef4ee,#e3ecee);border-radius:12px;font-family:serif;height:100%;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;gap:8px\"><div style=\"font-size:10px;letter-spacing:.1em;color:#6b7d6b;font-weight:700\">版本更新</div><h2 style=\"margin:0;font-size:15px;color:#243024;font-weight:600\">当前程序已更新至 v0.11.15</h2><p style=\"margin:0;font-size:12px;line-height:1.7;color:#5c6b5c\">前往公开仓库查看更新说明与下载方式。</p><a href=\"https://github.com/host1syan/ClaudeCN/releases\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"align-self:flex-start;margin-top:2px;padding:6px 12px;border-radius:8px;background:#3f6b45;color:#fff;font-size:11px;font-weight:700;text-decoration:none\">立即升级 →</a></div>"
       }
     },
     {
@@ -21,11 +20,10 @@
       "weight": 1,
       "title": "广告位招租",
       "summary": "广告位开放，合作请联系 host@1syan.com",
-      "detail": "让你的产品、工具或社区出现在开发者正在工作的地方。Claude CN Companion 在新建会话与思考面板提供克制的赞助展示，不打断编码流程；有意合作，请联系 host@1syan.com。",
-      "href": "https://github.com/host1syan/ClaudeCN/releases",
+      "detail": "想让更多开发者认识你的产品？这里适合放置一句清晰主张、一段产品介绍或版本公告。广告只读展示，不执行远程脚本；广告位招租，有意请联系 host@1syan.com。",
       "html": {
         "short": "<div style=\"padding:16px;background:linear-gradient(135deg,#f7f3ea,#efe6d5);border-radius:12px;font-family:serif;height:100%;box-sizing:border-box;display:flex;align-items:center;gap:14px\"><img src=\"https://cdn.jsdelivr.net/gh/host1syan/ClaudeCN@main/ads/sponsor-qr.png\" alt=\"微信赞赏码\" style=\"width:96px;height:96px;border-radius:10px;background:#fff;padding:6px;border:1px solid #e0d7c5;flex:0 0 auto\"><div><h2 style=\"margin:0;font-size:15px;color:#2f2a22;font-weight:600\">扫码支持作者</h2><p style=\"margin:8px 0 0;font-size:12px;line-height:1.7;color:#6b6154\">您的支持是我们前进的动力，我们将免费进行到底。</p></div></div>",
-        "large": "<div style=\"padding:16px;background:linear-gradient(135deg,#eef4ee,#e3ece3);border-radius:12px;font-family:serif;height:100%;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;gap:8px\"><div style=\"font-size:10px;letter-spacing:.1em;color:#6b7d6b;font-weight:700\">版本更新</div><h2 style=\"margin:0;font-size:15px;color:#243024;font-weight:600\">当前程序已更新至 v0.11.15</h2><p style=\"margin:0;font-size:12px;line-height:1.7;color:#5c6b5c\">前往公开仓库查看更新说明与下载方式。</p><a href=\"https://github.com/host1syan/ClaudeCN/releases\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"align-self:flex-start;margin-top:2px;padding:6px 12px;border-radius:8px;background:#3f6b45;color:#fff;font-size:11px;font-weight:700;text-decoration:none\">立即升级 →</a></div>"
+        "large": "<div style=\"padding:16px;background:linear-gradient(135deg,#eef4ee,#e3ecee);border-radius:12px;font-family:serif;height:100%;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;gap:8px\"><div style=\"font-size:10px;letter-spacing:.1em;color:#6b7d6b;font-weight:700\">版本更新</div><h2 style=\"margin:0;font-size:15px;color:#243024;font-weight:600\">当前程序已更新至 v0.11.15</h2><p style=\"margin:0;font-size:12px;line-height:1.7;color:#5c6b5c\">前往公开仓库查看更新说明与下载方式。</p><a href=\"https://github.com/host1syan/ClaudeCN/releases\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"align-self:flex-start;margin-top:2px;padding:6px 12px;border-radius:8px;background:#3f6b45;color:#fff;font-size:11px;font-weight:700;text-decoration:none\">立即升级 →</a></div>"
       }
     },
     {
@@ -34,11 +32,10 @@
       "weight": 1,
       "title": "广告位招租",
       "summary": "广告位开放，合作请联系 host@1syan.com",
-      "detail": "让你的产品、工具或社区出现在开发者正在工作的地方。Claude CN Companion 在新建会话与思考面板提供克制的赞助展示，不打断编码流程；有意合作，请联系 host@1syan.com。",
-      "href": "https://github.com/host1syan/ClaudeCN/releases",
+      "detail": "开发者打开新会话时，正是发现好工具、好服务和好社区的时刻。用一条简洁赞助文案建立首次印象，也可在思考内容展开时展示更完整介绍。合作请联系 host@1syan.com。",
       "html": {
         "short": "<div style=\"padding:16px;background:linear-gradient(135deg,#f7f3ea,#efe6d5);border-radius:12px;font-family:serif;height:100%;box-sizing:border-box;display:flex;align-items:center;gap:14px\"><img src=\"https://cdn.jsdelivr.net/gh/host1syan/ClaudeCN@main/ads/sponsor-qr.png\" alt=\"微信赞赏码\" style=\"width:96px;height:96px;border-radius:10px;background:#fff;padding:6px;border:1px solid #e0d7c5;flex:0 0 auto\"><div><h2 style=\"margin:0;font-size:15px;color:#2f2a22;font-weight:600\">扫码支持作者</h2><p style=\"margin:8px 0 0;font-size:12px;line-height:1.7;color:#6b6154\">您的支持是我们前进的动力，我们将免费进行到底。</p></div></div>",
-        "large": "<div style=\"padding:16px;background:linear-gradient(135deg,#eef4ee,#e3ece3);border-radius:12px;font-family:serif;height:100%;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;gap:8px\"><div style=\"font-size:10px;letter-spacing:.1em;color:#6b7d6b;font-weight:700\">版本更新</div><h2 style=\"margin:0;font-size:15px;color:#243024;font-weight:600\">当前程序已更新至 v0.11.15</h2><p style=\"margin:0;font-size:12px;line-height:1.7;color:#5c6b5c\">前往公开仓库查看更新说明与下载方式。</p><a href=\"https://github.com/host1syan/ClaudeCN/releases\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"align-self:flex-start;margin-top:2px;padding:6px 12px;border-radius:8px;background:#3f6b45;color:#fff;font-size:11px;font-weight:700;text-decoration:none\">立即升级 →</a></div>"
+        "large": "<div style=\"padding:16px;background:linear-gradient(135deg,#eef4ee,#e3ecee);border-radius:12px;font-family:serif;height:100%;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;gap:8px\"><div style=\"font-size:10px;letter-spacing:.1em;color:#6b7d6b;font-weight:700\">版本更新</div><h2 style=\"margin:0;font-size:15px;color:#243024;font-weight:600\">当前程序已更新至 v0.11.15</h2><p style=\"margin:0;font-size:12px;line-height:1.7;color:#5c6b5c\">前往公开仓库查看更新说明与下载方式。</p><a href=\"https://github.com/host1syan/ClaudeCN/releases\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"align-self:flex-start;margin-top:2px;padding:6px 12px;border-radius:8px;background:#3f6b45;color:#fff;font-size:11px;font-weight:700;text-decoration:none\">立即升级 →</a></div>"
       }
     },
     {
@@ -47,11 +44,10 @@
       "weight": 1,
       "title": "广告位招租",
       "summary": "广告位开放，合作请联系 host@1syan.com",
-      "detail": "让你的产品、工具或社区出现在开发者正在工作的地方。Claude CN Companion 在新建会话与思考面板提供克制的赞助展示，不打断编码流程；有意合作，请联系 host@1syan.com。",
-      "href": "https://github.com/host1syan/ClaudeCN/releases",
+      "detail": "思考中展开后，这里可以成为一张安静的赞助卡片：先说清你解决什么问题，再留下合作入口。思考完成后，广告区域自动恢复真实思考内容，不遮挡用户信息。广告位招租，有意联系 host@1syan.com。",
       "html": {
         "short": "<div style=\"padding:16px;background:linear-gradient(135deg,#f7f3ea,#efe6d5);border-radius:12px;font-family:serif;height:100%;box-sizing:border-box;display:flex;align-items:center;gap:14px\"><img src=\"https://cdn.jsdelivr.net/gh/host1syan/ClaudeCN@main/ads/sponsor-qr.png\" alt=\"微信赞赏码\" style=\"width:96px;height:96px;border-radius:10px;background:#fff;padding:6px;border:1px solid #e0d7c5;flex:0 0 auto\"><div><h2 style=\"margin:0;font-size:15px;color:#2f2a22;font-weight:600\">扫码支持作者</h2><p style=\"margin:8px 0 0;font-size:12px;line-height:1.7;color:#6b6154\">您的支持是我们前进的动力，我们将免费进行到底。</p></div></div>",
-        "large": "<div style=\"padding:16px;background:linear-gradient(135deg,#eef4ee,#e3ece3);border-radius:12px;font-family:serif;height:100%;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;gap:8px\"><div style=\"font-size:10px;letter-spacing:.1em;color:#6b7d6b;font-weight:700\">版本更新</div><h2 style=\"margin:0;font-size:15px;color:#243024;font-weight:600\">当前程序已更新至 v0.11.15</h2><p style=\"margin:0;font-size:12px;line-height:1.7;color:#5c6b5c\">前往公开仓库查看更新说明与下载方式。</p><a href=\"https://github.com/host1syan/ClaudeCN/releases\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"align-self:flex-start;margin-top:2px;padding:6px 12px;border-radius:8px;background:#3f6b45;color:#fff;font-size:11px;font-weight:700;text-decoration:none\">立即升级 →</a></div>"
+        "large": "<div style=\"padding:16px;background:linear-gradient(135deg,#eef4ee,#e3ecee);border-radius:12px;font-family:serif;height:100%;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;gap:8px\"><div style=\"font-size:10px;letter-spacing:.1em;color:#6b7d6b;font-weight:700\">版本更新</div><h2 style=\"margin:0;font-size:15px;color:#243024;font-weight:600\">当前程序已更新至 v0.11.15</h2><p style=\"margin:0;font-size:12px;line-height:1.7;color:#5c6b5c\">前往公开仓库查看更新说明与下载方式。</p><a href=\"https://github.com/host1syan/ClaudeCN/releases\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"align-self:flex-start;margin-top:2px;padding:6px 12px;border-radius:8px;background:#3f6b45;color:#fff;font-size:11px;font-weight:700;text-decoration:none\">立即升级 →</a></div>"
       }
     }
   ]
