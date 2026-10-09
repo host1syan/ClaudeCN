@@ -1,20 +1,20 @@
 {
   "channelId": "free-kilo",
   "schemaVersion": 1,
-  "revision": "2026-09-22-001",
+  "revision": "2026-10-09-001",
   "baseUrl": "https://api.kilo.ai/api/gateway",
   "localToken": "keyless",
   "defaultModels": {
-    "main": "stepfun/step-3.7-flash:free",
+    "main": "nvidia/nemotron-3-super-120b-a12b:free",
     "haiku": "",
     "sonnet": "",
     "opus": ""
   },
-  "defaultContextWindow": 128000,
+  "defaultContextWindow": 262144,
   "seedModels": [
-    "stepfun/step-3.7-flash:free",
-    "poolside/laguna-xs.2:free",
-    "poolside/laguna-m.1:free",
-    "nvidia/nemotron-3-super-120b-a12b:free"
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    "poolside/laguna-s-2.1:free",
+    "nvidia/nemotron-3.5-lightning:free",
+    "kilo-auto/free"
   ]
 }
