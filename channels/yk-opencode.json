@@ -1,8 +1,8 @@
 {
   "channelId": "yk-opencode",
   "schemaVersion": 1,
-  "revision": "2026-09-22-001",
-  "baseUrl": "https://opencode.ai/zen",
+  "revision": "2026-10-15-001",
+  "baseUrl": "https://opencode.ai/inference",
   "localToken": "public",
   "defaultModels": {
     "main": "mimo-v2.6-flash-free",
@@ -11,7 +11,7 @@
     "opus": ""
   },
   "defaultContextWindow": 200000,
-  "clientVersion": "1.18.31",
+  "clientVersion": "1.19.0",
   "projectId": "global",
   "requiredToolNames": ["bash", "edit", "glob", "grep", "read"]
 }
