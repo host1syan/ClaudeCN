@@ -5,12 +5,12 @@
   "baseUrl": "https://opencode.ai/inference",
   "localToken": "public",
   "defaultModels": {
-    "main": "mimo-v2.6-flash-free",
-    "haiku": "",
+    "main": "deepseek-v4.1-flash-free",
+    "haiku": "mimo-v2.6-flash-free",
     "sonnet": "",
     "opus": ""
   },
-  "defaultContextWindow": 200000,
+  "defaultContextWindow": 400000,
   "clientVersion": "1.19.0",
   "projectId": "global",
   "requiredToolNames": ["bash", "edit", "glob", "grep", "read"]
