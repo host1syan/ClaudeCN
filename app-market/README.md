@@ -1,8 +1,8 @@
 # 应用市场（App Market）
 
-容器部署下的应用市场，让 ClaudeCN 容器里能按需安装服务端工具（git、python、php、node、cloudflared 等）。
+容器部署下的应用市场，让 ClaudeCN 容器里能按需安装服务端工具（git、python、php-fpm、node、cloudflared、rclone、frp 等 17 个）。
 
-本目录是**远程目录（remote catalog）**的发布处：服务端启动后通过 jsDelivr 拉取这里的 `catalog.json`，覆盖镜像内置的应用列表。往目录里加一个应用**不需要重新构建镜像**。
+本目录是**远程目录（remote catalog）**的发布处：服务端通过 jsDelivr 拉取这里的 `catalog.json`，与镜像内置的应用列表**合并**（远端新增条目，远端缺的内置应用保持可见，旧远端数据不会压掉新内置应用）。往目录里加一个应用**不需要重新构建镜像**。
 
 ## 工作机制
 
@@ -103,6 +103,28 @@ binary 应用（下载静态可执行文件）：
 `installInputs` 的取值含义由服务端安装器解释（`options` 是硬白名单，越界值 API 直接 400）。上例中 `8.3.36` 走 Launchpad build 归档的精确 deb 安装（PPA pool 只留每分支最新 patch），`latest` 走普通 PPA 安装。
 
 注意：binary 类型还要求服务端代码 `binaryDownloadUrls()` 里有该 id 对应的下载地址（amd64 + arm64），远程目录给不出 URL——这是防止远程数据变成任意代码执行入口的一部分。
+
+## 当前应用清单（17 个）
+
+| id | 名称 | 类型 | 用途 |
+|---|---|---|---|
+| git | Git | apt | 版本控制 |
+| python3 | Python 3 + pip | apt | Python 运行时与包管理器 |
+| php | PHP 8 | apt | PHP CLI（ondrej PPA） |
+| php-fpm | PHP-FPM | apt | PHP FastCGI 进程管理器（版本可选，默认 8.3.36） |
+| node | Node.js LTS | binary | Node.js 运行时（持久卷，重建不丢） |
+| sqlite | SQLite | apt | 嵌入式数据库 CLI |
+| mysql-client | MySQL 客户端 | apt | 连接外部 MySQL |
+| postgresql-client | PostgreSQL 客户端 | apt | 连接外部 PostgreSQL |
+| tools | 常用工具包 | apt | wget / curl / unzip / htop / jq |
+| cloudflared | Cloudflare Tunnel | binary | 内网服务发布到公网（带隧道管理面板） |
+| ripgrep | ripgrep | apt | 极快的代码搜索（rg） |
+| rsync | rsync | apt | 增量文件同步与备份 |
+| rclone | rclone | apt | 云存储同步（70+ 后端） |
+| aria2 | aria2 | apt | 多协议轻量下载器 |
+| tmux | tmux | apt | 终端复用器 |
+| caddy | Caddy | binary | 现代 Web 服务器，自动 HTTPS |
+| frp | frp | binary | 内网穿透（frps + frpc） |
 
 ## 新增一个应用（不改镜像）
 
