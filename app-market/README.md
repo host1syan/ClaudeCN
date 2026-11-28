@@ -145,7 +145,17 @@ type AppPanelState = {
     statusLabel: string,           // 徽标文案（如「活跃」）
   }[]
   notes: string[]                  // 非行状信息（登录提示、错误文字）
-  actions: { id, label, danger? }[] // UI 渲染成按钮
+  actions: {                       // UI 渲染成按钮；带 inputs 时渲染成
+                                   // 表单（文本框或 options 下拉）+ 提交按钮
+    id, label, danger?,
+    inputs?: {                     // 动作输入
+      key, label,
+      defaultValue?: string,       // 预填值——用户改端口即可，不用从零输入
+      options?: { value, label }[],// 固定选项——渲染成下拉（如「选择线路」，
+                                   // 停用/删除的面板直接列出所有线路，含临时链接）
+      placeholder?, secret?, required?,
+    }[],
+  }[]
   hint?: string                    // 页脚提示（常用命令等）
   fetchedAt: number
 }
