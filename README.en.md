@@ -53,6 +53,7 @@ Temporary macOS builds may require manual approval; unsigned Windows installers 
 | [IM Access](docs/im/) | Remote conversation and management |
 | [Computer Use](docs/features/computer-use.md) | Screenshot, mouse, and keyboard control |
 | [Docker Deployment](DOCKER_README.md) | Browser-based Docker deployment |
+| [App Market](app-market/README.md) | Install server-side tooling in the container; contribute apps and per-app panels |
 | [FAQ](docs/guide/faq.md) | Common troubleshooting |
 
 ## Docker Deployment

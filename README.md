@@ -53,6 +53,7 @@ macOS 临时包可能需要手动放行；Windows 未签名安装包可能触发
 | [IM 接入](docs/im/) | 远程对话、项目切换和管理 |
 | [Computer Use](docs/features/computer-use.md) | 截屏、鼠标和键盘控制 |
 | [Docker 部署](DOCKER_README.md) | 浏览器访问的 Docker 部署 |
+| [应用市场](app-market/README.md) | 容器内安装服务端工具；向目录贡献应用与配套面板 |
 | [常见问题](docs/guide/faq.md) | 常见错误排查 |
 
 ## Docker 部署
