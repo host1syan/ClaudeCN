@@ -1,155 +1,23 @@
 {
   "version": 1,
-  "revision": "2026-11-28-003",
+  "revision": "2026-11-28-004",
   "apps": [
-    {
-      "id": "git",
-      "name": "Git",
-      "summary": "版本控制",
-      "installer": {
-        "type": "apt",
-        "packages": [
-          "git"
-        ]
-      }
-    },
-    {
-      "id": "python3",
-      "name": "Python 3 + pip",
-      "summary": "Python 运行时与包管理器",
-      "installer": {
-        "type": "apt",
-        "packages": [
-          "python3",
-          "python3-pip"
-        ]
-      }
-    },
-    {
-      "id": "php",
-      "name": "PHP 8",
-      "summary": "PHP CLI（ondrej PPA，8.x 最新版）",
-      "installer": {
-        "type": "apt",
-        "packages": [
-          "php-cli",
-          "php-mbstring",
-          "php-curl",
-          "php-xml"
-        ],
-        "aptSources": [
-          "ondrej-php"
-        ]
-      }
-    },
-    {
-      "id": "php-fpm",
-      "name": "PHP-FPM",
-      "summary": "PHP FastCGI 进程管理器（8.3.x；sock 监听，nginx 反代即用）",
-      "installer": {
-        "type": "apt",
-        "packages": [
-          "php8.3-fpm",
-          "php8.3-cli",
-          "php8.3-curl",
-          "php8.3-mbstring",
-          "php8.3-xml"
-        ],
-        "aptSources": [
-          "ondrej-php"
-        ]
-      },
-      "installInputs": [
-        {
-          "key": "version",
-          "label": "PHP 版本",
-          "defaultValue": "8.3.36",
-          "options": [
-            {
-              "value": "8.3.36",
-              "label": "8.3.36（精确版本）"
-            },
-            {
-              "value": "latest",
-              "label": "8.3 最新（跟随 PPA 更新）"
-            }
-          ],
-          "required": true
-        }
-      ]
-    },
-    {
-      "id": "node",
-      "name": "Node.js LTS",
-      "summary": "Node.js 运行时（静态二进制，装到持久卷，重建不丢）",
-      "installer": {
-        "type": "binary"
-      },
-      "binDirs": [
-        "bin"
-      ]
-    },
-    {
-      "id": "sqlite",
-      "name": "SQLite",
-      "summary": "嵌入式数据库 CLI",
-      "installer": {
-        "type": "apt",
-        "packages": [
-          "sqlite3"
-        ]
-      }
-    },
-    {
-      "id": "mysql-client",
-      "name": "MySQL 客户端",
-      "summary": "连接外部 MySQL 的命令行客户端",
-      "installer": {
-        "type": "apt",
-        "packages": [
-          "mysql-client"
-        ]
-      }
-    },
-    {
-      "id": "postgresql-client",
-      "name": "PostgreSQL 客户端",
-      "summary": "连接外部 PostgreSQL 的命令行客户端",
-      "installer": {
-        "type": "apt",
-        "packages": [
-          "postgresql-client"
-        ]
-      }
-    },
-    {
-      "id": "tools",
-      "name": "常用工具包",
-      "summary": "wget / curl / unzip / htop / jq",
-      "installer": {
-        "type": "apt",
-        "packages": [
-          "wget",
-          "curl",
-          "unzip",
-          "htop",
-          "jq"
-        ]
-      }
-    },
-    {
-      "id": "cloudflared",
-      "name": "Cloudflare Tunnel",
-      "summary": "cloudflared 客户端：把内网服务通过隧道发布到公网",
-      "installer": {
-        "type": "binary"
-      },
-      "binDirs": [
-        "bin"
-      ],
-      "panel": {
-        "title": "隧道管理"
-      }
-    }
+    { "id": "git", "name": "Git", "summary": "版本控制", "installer": { "type": "apt", "packages": ["git"] } },
+    { "id": "python3", "name": "Python 3 + pip", "summary": "Python 运行时与包管理器", "installer": { "type": "apt", "packages": ["python3", "python3-pip"] } },
+    { "id": "php", "name": "PHP 8", "summary": "PHP CLI（ondrej PPA，8.x 最新版）", "installer": { "type": "apt", "packages": ["php-cli", "php-mbstring", "php-curl", "php-xml"], "aptSources": ["ondrej-php"] } },
+    { "id": "php-fpm", "name": "PHP-FPM", "summary": "PHP FastCGI 进程管理器（8.3.x；sock 监听，nginx 反代即用）", "installer": { "type": "apt", "packages": ["php8.3-fpm", "php8.3-cli", "php8.3-curl", "php8.3-mbstring", "php8.3-xml"], "aptSources": ["ondrej-php"] }, "installInputs": [ { "key": "version", "label": "PHP 版本", "defaultValue": "8.3.36", "options": [ { "value": "8.3.36", "label": "8.3.36（精确版本）" }, { "value": "latest", "label": "8.3 最新（跟随 PPA 更新）" } ], "required": true } ] },
+    { "id": "node", "name": "Node.js LTS", "summary": "Node.js 运行时（静态二进制，装到持久卷，重建不丢）", "installer": { "type": "binary" }, "binDirs": ["bin"] },
+    { "id": "sqlite", "name": "SQLite", "summary": "嵌入式数据库 CLI", "installer": { "type": "apt", "packages": ["sqlite3"] } },
+    { "id": "mysql-client", "name": "MySQL 客户端", "summary": "连接外部 MySQL 的命令行客户端", "installer": { "type": "apt", "packages": ["mysql-client"] } },
+    { "id": "postgresql-client", "name": "PostgreSQL 客户端", "summary": "连接外部 PostgreSQL 的命令行客户端", "installer": { "type": "apt", "packages": ["postgresql-client"] } },
+    { "id": "tools", "name": "常用工具包", "summary": "wget / curl / unzip / htop / jq", "installer": { "type": "apt", "packages": ["wget", "curl", "unzip", "htop", "jq"] } },
+    { "id": "cloudflared", "name": "Cloudflare Tunnel", "summary": "cloudflared 客户端：把内网服务通过隧道发布到公网", "installer": { "type": "binary" }, "binDirs": ["bin"], "panel": { "title": "隧道管理" } },
+    { "id": "ripgrep", "name": "ripgrep", "summary": "极快的代码搜索工具（rg），递归搜索 + 正则 + gitignore 感知", "installer": { "type": "apt", "packages": ["ripgrep"] } },
+    { "id": "rsync", "name": "rsync", "summary": "增量文件同步与备份（本地目录 / SSH 远端）", "installer": { "type": "apt", "packages": ["rsync"] } },
+    { "id": "rclone", "name": "rclone", "summary": "云存储命令行同步：70+ 后端（S3、R2、OneDrive、网盘…）", "installer": { "type": "apt", "packages": ["rclone"] } },
+    { "id": "aria2", "name": "aria2", "summary": "多协议轻量下载器：HTTP/FTP/BitTorrent/magnet", "installer": { "type": "apt", "packages": ["aria2"] } },
+    { "id": "tmux", "name": "tmux", "summary": "终端复用器：会话与长任务在断开连接后继续运行", "installer": { "type": "apt", "packages": ["tmux"] } },
+    { "id": "caddy", "name": "Caddy", "summary": "现代 Web 服务器：自动 HTTPS，单二进制零依赖", "installer": { "type": "binary" }, "binDirs": ["bin"] },
+    { "id": "frp", "name": "frp", "summary": "内网穿透：frps 服务端 + frpc 客户端，自建 TCP/HTTP 隧道", "installer": { "type": "binary" }, "binDirs": ["bin"] }
   ]
 }
