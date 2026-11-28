@@ -46,6 +46,7 @@
 | `installer.spec` | pip/npm/bun | 包 spec 字符串，最长 200，只允许 `[A-Za-z0-9@/._:~^-]`（shell 元字符直接拒绝，不做转义） |
 | `installer.aptSources` | apt（可选） | 额外 apt 源 id，只能引用内置 curated 源（见下） |
 | `binDirs` | binary/npm/bun（可选） | 安装后导出到 PATH 的目录名 |
+| `installInputs` | 否（可选） | 安装前选项数组（如版本选择）。每项 `{ key, label, defaultValue?, options?: [{value,label}], required? }`。UI 在点「安装」时弹表单；options 渲染成下拉，defaultValue 是未触碰时的提交值。服务端按声明白名单校验，未知/越界值直接拒绝 |
 | `panel` | 否（可选） | `{ "title": "隧道管理" }` —— 仅声明「这个应用有管理面板」。**面板代码永远随镜像发布，远程目录给不出面板实现** |
 
 当前内置 curated apt 源只有一个：`ondrej-php`（ondrej/php PPA，PHP 8.x）。需要新源时服务端代码里的 `CURATED_APT_SOURCES` 要同步加。
@@ -75,6 +76,31 @@ binary 应用（下载静态可执行文件）：
   "panel": { "title": "隧道管理" }
 }
 ```
+
+带安装前选项（版本选择）的应用：
+
+```json
+{
+  "id": "php-fpm",
+  "name": "PHP-FPM",
+  "summary": "PHP FastCGI 进程管理器（8.3.x；sock 监听，nginx 反代即用）",
+  "installer": { "type": "apt", "packages": ["php8.3-fpm", "php8.3-cli", "php8.3-curl", "php8.3-mbstring", "php8.3-xml"], "aptSources": ["ondrej-php"] },
+  "installInputs": [
+    {
+      "key": "version",
+      "label": "PHP 版本",
+      "defaultValue": "8.3.36",
+      "options": [
+        { "value": "8.3.36", "label": "8.3.36（精确版本）" },
+        { "value": "latest", "label": "8.3 最新（跟随 PPA 更新）" }
+      ],
+      "required": true
+    }
+  ]
+}
+```
+
+`installInputs` 的取值含义由服务端安装器解释（`options` 是硬白名单，越界值 API 直接 400）。上例中 `8.3.36` 走 Launchpad build 归档的精确 deb 安装（PPA pool 只留每分支最新 patch），`latest` 走普通 PPA 安装。
 
 注意：binary 类型还要求服务端代码 `binaryDownloadUrls()` 里有该 id 对应的下载地址（amd64 + arm64），远程目录给不出 URL——这是防止远程数据变成任意代码执行入口的一部分。
 
